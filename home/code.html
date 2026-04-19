@@ -109,35 +109,22 @@
 
 <body class="bg-background font-body text-on-surface antialiased">
     <!-- Top Navigation Shell -->
-    <header
-        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
-        <nav
-            class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto font-['Public_Sans'] antialiased tracking-tight">
+    <header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+        <nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto font-['Public_Sans'] antialiased tracking-tight">
             <div class="flex items-center gap-8">
-                <a class="text-xl font-bold text-blue-900 dark:text-blue-100" href="#">The Clinical Sanctuary</a>
+                <a class="text-xl font-bold text-blue-900 dark:text-blue-100" href="../index.html">The Clinical Sanctuary</a>
                 <div class="hidden md:flex gap-6">
-                    <a class="text-blue-700 dark:text-blue-300 border-b-2 border-blue-700 font-semibold pb-1 cursor-pointer active:opacity-80 transition-all"
-                        href="#">Home</a>
-                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
-                        href="#">Booking Search</a>
-                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
-                        href="#">Map &amp; Directory</a>
-                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
-                        href="#">Departments</a>
+                    <a class="text-blue-700 dark:text-blue-300 border-b-2 border-blue-700 font-semibold pb-1 cursor-pointer active:opacity-80 transition-all" href="#">Home</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all" href="../booking/code.html">Booking Search</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all" href="../hospital/code.html">Map & Directory</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all" href="../department/code.html">Departments</a>
                 </div>
             </div>
             <div class="flex items-center gap-4">
-                <button
-                    class="bg-error text-on-error px-4 py-1.5 rounded-lg text-sm font-bold uppercase tracking-wider hover:opacity-90 transition-all">
-                    Emergency
-                </button>
+                <button class="bg-error text-on-error px-4 py-1.5 rounded-lg text-sm font-bold uppercase tracking-wider hover:opacity-90 transition-all">Emergency</button>
                 <div class="flex gap-2 text-slate-600">
-                    <span
-                        class="material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors"
-                        data-icon="account_circle">account_circle</span>
-                    <span
-                        class="material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors"
-                        data-icon="help">help</span>
+                    <span class="material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors" data-icon="account_circle">account_circle</span>
+                    <span class="material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors" data-icon="help">help</span>
                 </div>
             </div>
         </nav>
@@ -159,12 +146,12 @@
                         specialized departments in seconds.
                     </p>
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <button
+                        <button onclick="window.location.href='../booking/code.html'"
                             class="hero-gradient text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:brightness-110 transition-all flex items-center justify-center gap-2">
                             <span class="material-symbols-outlined" data-icon="event_available">event_available</span>
                             Find my appointment
                         </button>
-                        <button
+                        <button onclick="window.location.href='../hospital/code.html'"
                             class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all flex items-center justify-center gap-2">
                             <span class="material-symbols-outlined" data-icon="explore">explore</span>
                             Explore Map
@@ -226,14 +213,14 @@
                     <p class="text-on-surface-variant mt-2">Access key locations and services throughout our sanctuary.
                     </p>
                 </div>
-                <button class="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all">
+                <button onclick="window.location.href='../hospital/code.html'" class="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all">
                     View Full Directory <span class="material-symbols-outlined"
                         data-icon="arrow_forward">arrow_forward</span>
                 </button>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 <!-- Card 1 -->
-                <div
+                <div onclick="window.location.href='../hospital/code.html'"
                     class="bg-surface-container-low p-8 rounded-full group hover:bg-primary-fixed transition-all cursor-pointer">
                     <div
                         class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-primary group-hover:text-white transition-colors">
@@ -244,7 +231,7 @@
                         with step-by-step guidance.</p>
                 </div>
                 <!-- Card 2 -->
-                <div
+                <div onclick="window.location.href='../department/code.html'"
                     class="bg-surface-container-low p-8 rounded-full group hover:bg-secondary-container transition-all cursor-pointer">
                     <div
                         class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-secondary group-hover:text-white transition-colors">
@@ -256,7 +243,7 @@
                         to Pediatrics.</p>
                 </div>
                 <!-- Card 3 -->
-                <div
+                <div onclick="window.location.href='../department/code.html'"
                     class="bg-surface-container-low p-8 rounded-full group hover:bg-primary-fixed transition-all cursor-pointer">
                     <div
                         class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-primary group-hover:text-white transition-colors">
@@ -267,7 +254,7 @@
                         professionals.</p>
                 </div>
                 <!-- Card 4 -->
-                <div
+                <div onclick="window.location.href='#'"
                     class="bg-surface-container-low p-8 rounded-full group hover:bg-secondary-container transition-all cursor-pointer">
                     <div
                         class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-secondary group-hover:text-white transition-colors">

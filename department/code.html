@@ -104,36 +104,27 @@
 </head>
 
 <body class="bg-background text-on-surface min-h-screen flex flex-col">
-    <!-- TopNavBar -->
-    <nav
-        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none font-['Public_Sans'] antialiased tracking-tight">
-        <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
-            <div
-                class="text-xl font-bold text-blue-900 dark:text-blue-100 cursor-pointer active:opacity-80 transition-all">
-                The Clinical Sanctuary</div>
-            <!-- Desktop Links -->
-            <div class="hidden md:flex items-center gap-8">
-                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-all duration-300"
-                    href="../index.html">Home</a>
-                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-all duration-300"
-                    href="../booking/code.html">Booking Search</a>
-                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-all duration-300"
-                    href="../hospital/code.html">Map &amp; Directory</a>
-                <a class="text-blue-700 dark:text-blue-300 border-b-2 border-blue-700 font-semibold pb-1 transition-all duration-300"
-                    href="#">Departments</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <button
-                    class="bg-primary text-on-primary px-4 py-2 rounded-xl font-semibold text-sm hover:opacity-90 transition-all">Emergency</button>
-                <div class="flex gap-2">
-                    <span
-                        class="material-symbols-outlined text-slate-600 cursor-pointer p-2 hover:bg-slate-100 rounded-full">account_circle</span>
-                    <span
-                        class="material-symbols-outlined text-slate-600 cursor-pointer p-2 hover:bg-slate-100 rounded-full">help</span>
-                </div>
-            </div>
-        </div>
-    </nav>
+  <!-- Top Navigation Shell -->
+  <header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+      <nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto font-['Public_Sans'] antialiased tracking-tight">
+          <div class="flex items-center gap-8">
+              <a class="text-xl font-bold text-blue-900 dark:text-blue-100" href="../index.html">The Clinical Sanctuary</a>
+              <div class="hidden md:flex gap-6">
+                  <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all" href="../index.html">Home</a>
+                  <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all" href="../booking/code.html">Booking Search</a>
+                  <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all" href="../hospital/code.html">Map & Directory</a>
+                  <a class="text-blue-700 dark:text-blue-300 border-b-2 border-blue-700 font-semibold pb-1 cursor-pointer active:opacity-80 transition-all" href="#">Departments</a>
+              </div>
+          </div>
+          <div class="flex items-center gap-4">
+              <button class="bg-error text-on-error px-4 py-1.5 rounded-lg text-sm font-bold uppercase tracking-wider hover:opacity-90 transition-all">Emergency</button>
+              <div class="flex gap-2 text-slate-600">
+                  <span class="material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors" data-icon="account_circle">account_circle</span>
+                  <span class="material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors" data-icon="help">help</span>
+              </div>
+          </div>
+      </nav>
+  </header>
     <main class="flex-grow pt-24 pb-12 max-w-7xl mx-auto px-6 w-full">
         <!-- Urgency Banner -->
         <div
@@ -161,7 +152,7 @@
                     and world-class surgical precision.
                 </p>
                 <div class="flex flex-wrap gap-4">
-                    <button
+                    <button onclick="window.location.href='../booking/code.html'"
                         class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-primary/10">
                         <span class="material-symbols-outlined">calendar_today</span>
                         Book Consultation
@@ -332,7 +323,7 @@
                         <p class="text-lg text-primary font-semibold mb-4">Board Certified in Cardiovascular Disease</p>
                         <p class="text-on-surface-variant leading-relaxed mb-6 italic">"Our mission is to treat every
                             patient with the same precision and care we would give our own family members."</p>
-                        <button class="text-primary font-bold flex items-center gap-2 hover:underline">
+                        <button onclick="window.location.href='../hospital/code.html'" class="text-primary font-bold flex items-center gap-2 hover:underline">
                             View Full Medical Team <span class="material-symbols-outlined">arrow_forward</span>
                         </button>
                     </div>
