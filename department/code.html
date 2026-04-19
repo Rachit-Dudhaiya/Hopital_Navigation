@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Cardiology - The Clinical Sanctuary</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d7dadf",
+                        "surface-tint": "#005db5",
+                        "on-surface-variant": "#424752",
+                        "tertiary-container": "#006c5f",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c2c6d4",
+                        "primary-fixed": "#d6e3ff",
+                        "on-primary-container": "#cadcff",
+                        "on-tertiary-container": "#8febda",
+                        "on-secondary-fixed-variant": "#005312",
+                        "on-surface": "#181c1f",
+                        "tertiary-fixed": "#97f3e2",
+                        "on-secondary-container": "#217128",
+                        "secondary-fixed-dim": "#88d982",
+                        "secondary-fixed": "#a3f69c",
+                        "on-primary-fixed": "#001b3d",
+                        "primary-container": "#005fb8",
+                        "secondary-container": "#a0f399",
+                        "on-tertiary-fixed": "#00201b",
+                        "on-primary-fixed-variant": "#00468b",
+                        "primary": "#00488d",
+                        "inverse-primary": "#a8c8ff",
+                        "background": "#f7f9fe",
+                        "surface-bright": "#f7f9fe",
+                        "surface": "#f7f9fe",
+                        "on-tertiary-fixed-variant": "#005047",
+                        "surface-container-low": "#f1f4f8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-background": "#181c1f",
+                        "inverse-on-surface": "#eef1f6",
+                        "surface-container": "#ebeef3",
+                        "tertiary": "#005248",
+                        "surface-variant": "#e0e3e7",
+                        "secondary": "#1b6d24",
+                        "surface-container-high": "#e5e8ed",
+                        "inverse-surface": "#2d3134",
+                        "outline": "#727783",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#7ad7c6",
+                        "on-secondary-fixed": "#002204",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#a8c8ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e0e3e7",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Public Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-headline {
+            font-family: 'Public Sans', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-background text-on-surface min-h-screen flex flex-col">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none font-['Public_Sans'] antialiased tracking-tight">
+        <div class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto">
+            <div
+                class="text-xl font-bold text-blue-900 dark:text-blue-100 cursor-pointer active:opacity-80 transition-all">
+                The Clinical Sanctuary</div>
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-all duration-300"
+                    href="../index.html">Home</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-all duration-300"
+                    href="../booking/code.html">Booking Search</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 transition-all duration-300"
+                    href="../hospital/code.html">Map &amp; Directory</a>
+                <a class="text-blue-700 dark:text-blue-300 border-b-2 border-blue-700 font-semibold pb-1 transition-all duration-300"
+                    href="#">Departments</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="bg-primary text-on-primary px-4 py-2 rounded-xl font-semibold text-sm hover:opacity-90 transition-all">Emergency</button>
+                <div class="flex gap-2">
+                    <span
+                        class="material-symbols-outlined text-slate-600 cursor-pointer p-2 hover:bg-slate-100 rounded-full">account_circle</span>
+                    <span
+                        class="material-symbols-outlined text-slate-600 cursor-pointer p-2 hover:bg-slate-100 rounded-full">help</span>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="flex-grow pt-24 pb-12 max-w-7xl mx-auto px-6 w-full">
+        <!-- Urgency Banner -->
+        <div
+            class="mb-8 bg-tertiary-container text-on-tertiary-container px-6 py-3 rounded-xl flex items-center justify-between shadow-sm">
+            <div class="flex items-center gap-3">
+                <span class="material-symbols-outlined">info</span>
+                <p class="text-sm font-medium">Department Update: Walk-in clinics are available today until 4:00 PM.</p>
+            </div>
+            <span class="material-symbols-outlined cursor-pointer">close</span>
+        </div>
+        <!-- Breadcrumbs -->
+        <nav class="mb-6 flex items-center gap-2 text-on-surface-variant text-sm font-medium">
+            <span class="cursor-pointer hover:text-primary">Directory</span>
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+            <span class="cursor-pointer hover:text-primary">Clinical Services</span>
+            <span class="material-symbols-outlined text-sm">chevron_right</span>
+            <span class="text-on-surface">Cardiology</span>
+        </nav>
+        <!-- Department Hero Section -->
+        <div class="relative grid grid-cols-1 lg:grid-cols-12 gap-8 items-start mb-12">
+            <div class="lg:col-span-7">
+                <h1 class="text-5xl md:text-6xl font-extrabold text-on-surface tracking-tighter mb-4">Cardiology</h1>
+                <p class="text-xl text-on-surface-variant max-w-2xl leading-relaxed mb-8">
+                    Leading the future of cardiovascular health through compassionate care, advanced diagnostic imaging,
+                    and world-class surgical precision.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <button
+                        class="bg-gradient-to-br from-primary to-primary-container text-on-primary px-8 py-4 rounded-xl font-bold flex items-center gap-2 shadow-lg shadow-primary/10">
+                        <span class="material-symbols-outlined">calendar_today</span>
+                        Book Consultation
+                    </button>
+                    <button
+                        class="bg-surface-container-high text-on-surface-variant px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:bg-surface-dim transition-all">
+                        <span class="material-symbols-outlined">call</span>
+                        Contact Desk
+                    </button>
+                </div>
+            </div>
+            <!-- Department Quick Facts Glass Card -->
+            <div
+                class="lg:col-span-5 bg-surface-container-lowest/60 backdrop-blur-xl p-8 rounded-xl border border-white/20 shadow-xl self-center">
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="p-3 bg-primary-fixed rounded-xl text-primary">
+                            <span class="material-symbols-outlined">location_on</span>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-1">Location
+                            </p>
+                            <p class="text-lg font-bold">West Wing, 4th Floor</p>
+                            <p class="text-sm text-on-surface-variant">Room 412 - Suite B</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="p-3 bg-secondary-fixed rounded-xl text-secondary">
+                            <span class="material-symbols-outlined">schedule</span>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-1">Hours
+                            </p>
+                            <p class="text-lg font-bold">08:00 AM – 06:00 PM</p>
+                            <p class="text-sm text-on-surface-variant">Monday to Friday</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="p-3 bg-tertiary-fixed rounded-xl text-tertiary">
+                            <span class="material-symbols-outlined">phone</span>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-1">Direct
+                                Line</p>
+                            <p class="text-lg font-bold">+1 (555) 012-3456</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Asymmetric Content Layout -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Navigation & Wayfinding (Left Column) -->
+            <div class="lg:col-span-4 space-y-8">
+                <div class="bg-surface-container-low p-8 rounded-xl">
+                    <h3 class="text-2xl font-bold mb-6 text-on-surface flex items-center gap-2">
+                        <span class="material-symbols-outlined text-primary">directions_walk</span>
+                        Wayfinding
+                    </h3>
+                    <div class="space-y-8 relative">
+                        <!-- Connecting Line Decoration -->
+                        <div class="absolute left-6 top-8 bottom-8 w-0.5 bg-outline-variant/30 hidden sm:block"></div>
+                        <div class="flex items-start gap-6 relative">
+                            <div
+                                class="z-10 w-12 h-12 rounded-full bg-white flex items-center justify-center border-2 border-primary shrink-0">
+                                <span class="font-bold text-primary">1</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-on-surface">Main Entrance</p>
+                                <p class="text-sm text-on-surface-variant leading-snug">Enter through the glass atrium
+                                    and proceed past the Information Desk.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-6 relative">
+                            <div
+                                class="z-10 w-12 h-12 rounded-full bg-white flex items-center justify-center border-2 border-outline-variant shrink-0">
+                                <span class="font-bold text-on-surface-variant">2</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-on-surface">Elevator Bank B</p>
+                                <p class="text-sm text-on-surface-variant leading-snug">Turn right after the pharmacy.
+                                    Take elevators to the 4th Floor.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-6 relative">
+                            <div
+                                class="z-10 w-12 h-12 rounded-full bg-primary flex items-center justify-center shrink-0">
+                                <span class="material-symbols-outlined text-white">pin_drop</span>
+                            </div>
+                            <div>
+                                <p class="font-bold text-on-surface">Suite 412</p>
+                                <p class="text-sm text-on-surface-variant leading-snug">Exit the elevator and follow the
+                                    blue wall markings to Cardiology.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-surface-container-high p-8 rounded-xl overflow-hidden relative min-h-[300px]">
+                    <div class="absolute inset-0 bg-slate-200">
+                        <img class="w-full h-full object-cover grayscale brightness-110 opacity-60"
+                            data-alt="clean architectural floor plan diagram of a hospital wing with blue highlight on cardiology department area"
+                            data-location="Hospital Floor Map"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgs_o-oR5WG-_PTG_sf5tghvqyeJ2qE7vwvYbBNS9h7x8j_cNTnXK_QUIyXJlDFyyY9FfEZtPsfIq0Bte7FxP1Sw9SDAbTjpp7qMB25q4faj6H2e02l3T5ZH3bIiHnSJfgwEvfbjOO6xQsQFMIlc_CsR2pPW27CE57tiSyj-Sy1LkfA0uEngRE-8FHaAaRF-w2Too1PWOMYd84YDmXfOEhM7JdhPY2M_Zn_mbOqZjAbMgU6E4uaYzgeuznchHlsvnYBJfcm_nIFd00" />
+                        <!-- Marker Overlay -->
+                        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                            <div class="relative">
+                                <div class="absolute inset-0 bg-primary/20 animate-ping rounded-full"></div>
+                                <div class="relative bg-primary text-white p-3 rounded-full shadow-lg">
+                                    <span class="material-symbols-outlined block">cardiology</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur p-4 rounded-lg shadow-sm border border-outline-variant/20">
+                        <p class="text-xs font-bold uppercase tracking-widest text-on-surface-variant">Current View</p>
+                        <p class="text-sm font-bold">West Wing, Floor 4 Detail</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Content Area (Right Column) -->
+            <div class="lg:col-span-8 space-y-12">
+                <!-- Specialized Units Grid -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Clinical Focus Areas</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div
+                            class="bg-surface-container-low p-6 rounded-xl hover:bg-surface-container transition-colors cursor-default">
+                            <span class="material-symbols-outlined text-primary mb-4 text-3xl">ecg</span>
+                            <h4 class="font-bold text-lg mb-2">Interventional Cardiology</h4>
+                            <p class="text-sm text-on-surface-variant">Minimally invasive procedures including
+                                angioplasty and stent placement for optimal heart health.</p>
+                        </div>
+                        <div
+                            class="bg-surface-container-low p-6 rounded-xl hover:bg-surface-container transition-colors cursor-default">
+                            <span class="material-symbols-outlined text-primary mb-4 text-3xl">favorite</span>
+                            <h4 class="font-bold text-lg mb-2">Heart Failure Management</h4>
+                            <p class="text-sm text-on-surface-variant">Comprehensive long-term care plans and monitoring
+                                for patients with congestive heart conditions.</p>
+                        </div>
+                        <div
+                            class="bg-surface-container-low p-6 rounded-xl hover:bg-surface-container transition-colors cursor-default">
+                            <span class="material-symbols-outlined text-primary mb-4 text-3xl">monitor_heart</span>
+                            <h4 class="font-bold text-lg mb-2">Electrophysiology</h4>
+                            <p class="text-sm text-on-surface-variant">Specialized diagnosis and treatment of heart
+                                rhythm disorders (arrhythmias) and pacemaker care.</p>
+                        </div>
+                        <div
+                            class="bg-surface-container-low p-6 rounded-xl hover:bg-surface-container transition-colors cursor-default">
+                            <span class="material-symbols-outlined text-primary mb-4 text-3xl">pulse_alert</span>
+                            <h4 class="font-bold text-lg mb-2">Diagnostic Imaging</h4>
+                            <p class="text-sm text-on-surface-variant">Advanced echocardiography, cardiac MRI, and CT
+                                scanning for precise anatomical visualization.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Featured Specialist -->
+                <div
+                    class="bg-surface text-on-surface border-2 border-primary-container/20 rounded-xl p-8 flex flex-col md:flex-row items-center gap-8">
+                    <img class="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover border-4 border-white shadow-xl"
+                        data-alt="portrait of a professional cardiologist doctor wearing a white clinical coat and a stethoscope smiling warmly in a bright medical office"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzrPw8vMAMtU6w61J68Ub_Pe4gfOPrFioh8YK3fCcxHHJrKFByog6gukJ88j0CQuxogBTIlx70mTXCjXvfS3nI3BLTCBC8ndFXDU9liO7fGKRTsIKCq8mK8GvfL2hHsRO4iEMIqKw7tmdi2MpWbomoyuap_QmTg2kfK9i_Z_eppHwJHszUQAYRBoYDBycE4bcasRf751EXpWlmXyfiZmyE9PwbmeAbcGKMZTc3YgQ9acJ1iKnVcmC48yYw04J_a0gyUyjEN2aDQbkL" />
+                    <div class="text-center md:text-left">
+                        <div
+                            class="inline-block bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-xs font-bold mb-4">
+                            HEAD OF DEPARTMENT</div>
+                        <h3 class="text-3xl font-bold mb-2">Dr. Alistair Vance</h3>
+                        <p class="text-lg text-primary font-semibold mb-4">Board Certified in Cardiovascular Disease</p>
+                        <p class="text-on-surface-variant leading-relaxed mb-6 italic">"Our mission is to treat every
+                            patient with the same precision and care we would give our own family members."</p>
+                        <button class="text-primary font-bold flex items-center gap-2 hover:underline">
+                            View Full Medical Team <span class="material-symbols-outlined">arrow_forward</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="w-full mt-auto py-12 bg-slate-100 dark:bg-slate-950 font-['Inter'] text-sm leading-relaxed">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-6 max-w-7xl mx-auto">
+            <div class="col-span-1">
+                <div class="text-lg font-semibold text-blue-900 dark:text-blue-100 mb-4">The Clinical Sanctuary</div>
+                <p class="text-slate-500">Healing with empathy, innovation, and unwavering architectural calm.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-blue-900 dark:text-blue-200 mb-4">Quick Links</h4>
+                <div class="flex flex-col gap-3">
+                    <a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all"
+                        href="#">Contact Us</a>
+                    <a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all"
+                        href="#">Privacy Policy</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-blue-900 dark:text-blue-200 mb-4">Patient Support</h4>
+                <div class="flex flex-col gap-3">
+                    <a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all"
+                        href="#">Emergency Guide</a>
+                    <a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all"
+                        href="#">Terms of Service</a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-blue-900 dark:text-blue-200 mb-4">Contact Info</h4>
+                <p class="text-slate-500 mb-2">1200 Sanctuary Way<br />Medical District, NY 10012</p>
+                <p class="text-slate-500">General: (555) 123-4567</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
+            <p class="text-slate-500">© 2024 The Clinical Sanctuary. All rights reserved.</p>
+        </div>
+    </footer>
+    <!-- Prev / Next page navigation -->
+    <div class="floating-nav" role="navigation" aria-label="Page navigation">
+        <a class="nav-btn prev" href="../hospital/code.html" title="Previous page">← Prev</a>
+        <a class="nav-btn next" href="../index.html" title="Next page">Next →</a>
+    </div>
+    <style>
+        .floating-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(6px);
+            padding: 6px;
+            border-radius: 999px;
+            box-shadow: 0 6px 18px rgba(2, 6, 23, 0.12);
+            z-index: 9999
+        }
+
+        .floating-nav .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            text-decoration: none;
+            color: #00488d;
+            font-weight: 600;
+            border: 1px solid rgba(0, 72, 141, 0.07);
+            background: transparent
+        }
+
+        .floating-nav .nav-btn:hover {
+            background: rgba(0, 72, 141, 0.06)
+        }
+    </style>
+</body>
+
+</html>
