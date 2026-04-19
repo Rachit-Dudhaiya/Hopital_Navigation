@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>The Clinical Sanctuary | Modern Hospital Navigation</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Icons -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d7dadf",
+                        "surface-tint": "#005db5",
+                        "on-surface-variant": "#424752",
+                        "tertiary-container": "#006c5f",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c2c6d4",
+                        "primary-fixed": "#d6e3ff",
+                        "on-primary-container": "#cadcff",
+                        "on-tertiary-container": "#8febda",
+                        "on-secondary-fixed-variant": "#005312",
+                        "on-surface": "#181c1f",
+                        "tertiary-fixed": "#97f3e2",
+                        "on-secondary-container": "#217128",
+                        "secondary-fixed-dim": "#88d982",
+                        "secondary-fixed": "#a3f69c",
+                        "on-primary-fixed": "#001b3d",
+                        "primary-container": "#005fb8",
+                        "secondary-container": "#a0f399",
+                        "on-tertiary-fixed": "#00201b",
+                        "on-primary-fixed-variant": "#00468b",
+                        "primary": "#00488d",
+                        "inverse-primary": "#a8c8ff",
+                        "background": "#f7f9fe",
+                        "surface-bright": "#f7f9fe",
+                        "surface": "#f7f9fe",
+                        "on-tertiary-fixed-variant": "#005047",
+                        "surface-container-low": "#f1f4f8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-background": "#181c1f",
+                        "inverse-on-surface": "#eef1f6",
+                        "surface-container": "#ebeef3",
+                        "tertiary": "#005248",
+                        "surface-variant": "#e0e3e7",
+                        "secondary": "#1b6d24",
+                        "surface-container-high": "#e5e8ed",
+                        "inverse-surface": "#2d3134",
+                        "outline": "#727783",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#7ad7c6",
+                        "on-secondary-fixed": "#002204",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#a8c8ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e0e3e7",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Public Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #00488d 0%, #005fb8 100%);
+        }
+
+        .surface-lift {
+            box-shadow: 0px 12px 32px rgba(24, 28, 31, 0.06);
+        }
+    </style>
+</head>
+
+<body class="bg-background font-body text-on-surface antialiased">
+    <!-- Top Navigation Shell -->
+    <header
+        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+        <nav
+            class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto font-['Public_Sans'] antialiased tracking-tight">
+            <div class="flex items-center gap-8">
+                <a class="text-xl font-bold text-blue-900 dark:text-blue-100" href="#">The Clinical Sanctuary</a>
+                <div class="hidden md:flex gap-6">
+                    <a class="text-blue-700 dark:text-blue-300 border-b-2 border-blue-700 font-semibold pb-1 cursor-pointer active:opacity-80 transition-all"
+                        href="#">Home</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
+                        href="#">Booking Search</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
+                        href="#">Map &amp; Directory</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
+                        href="#">Departments</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="bg-error text-on-error px-4 py-1.5 rounded-lg text-sm font-bold uppercase tracking-wider hover:opacity-90 transition-all">
+                    Emergency
+                </button>
+                <div class="flex gap-2 text-slate-600">
+                    <span
+                        class="material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors"
+                        data-icon="account_circle">account_circle</span>
+                    <span
+                        class="material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors"
+                        data-icon="help">help</span>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main class="pt-24 pb-20">
+        <!-- Hero Section -->
+        <section class="max-w-7xl mx-auto px-6 mb-16">
+            <div class="relative rounded-full overflow-hidden min-h-[500px] flex items-center bg-primary">
+                <img alt="Hospital Atrium"
+                    class="absolute inset-0 w-full h-full object-cover mix-blend-overlay opacity-40"
+                    data-alt="Modern spacious hospital atrium with large glass windows, sunlight streaming through, and lush indoor plants creating a calm atmosphere"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAPNFoSsKqNbIdt-u4H10K7TCYxo1rVW84z-P6E6ReMfYKufCiBPNgzGMpJ1UgvWvFrH9AQq_VOyigNgJJxuMQEOz78boe8CuDCQzbBaR4X61VfRTQoYH3hnYrpCo-kAAoQxl3N2R4FdRIrJzAnHvW5dCI8FODaUkFEBrNSKPh_LjkqWwlR94g896U9KTT1Cebnnn1f9kQxdkk4_ErnjuXIwbPU7smkT6b5smatyn3C0mryqiF1WKijsoKyhbagIKx1a-4unhNG2df" />
+                <div class="relative z-10 px-12 md:px-20 max-w-2xl">
+                    <h1 class="font-headline text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6">
+                        How can we help you find your way today?
+                    </h1>
+                    <p class="text-on-primary-container text-lg mb-10 opacity-90 leading-relaxed">
+                        Navigating care should be simple. Find your appointment, explore our campus, or connect with our
+                        specialized departments in seconds.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button
+                            class="hero-gradient text-white px-8 py-4 rounded-xl font-semibold shadow-lg hover:brightness-110 transition-all flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined" data-icon="event_available">event_available</span>
+                            Find my appointment
+                        </button>
+                        <button
+                            class="bg-white/10 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-xl font-semibold hover:bg-white/20 transition-all flex items-center justify-center gap-2">
+                            <span class="material-symbols-outlined" data-icon="explore">explore</span>
+                            Explore Map
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Search & Utility Bento -->
+        <section class="max-w-7xl mx-auto px-6 mb-20">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+                <!-- Large Search Card -->
+                <div
+                    class="md:col-span-8 bg-surface-container-lowest p-8 rounded-full surface-lift flex flex-col justify-center">
+                    <h2 class="font-headline text-2xl font-bold mb-6 text-on-surface">General Information Search</h2>
+                    <div class="relative">
+                        <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline"
+                            data-icon="search">search</span>
+                        <input
+                            class="w-full pl-12 pr-4 py-4 bg-surface-container-highest rounded-xl border-none focus:ring-2 focus:ring-surface-tint/40 transition-all text-on-surface"
+                            placeholder="Search doctors, procedures, or visiting hours..." type="text" />
+                    </div>
+                    <div class="mt-4 flex flex-wrap gap-2">
+                        <span
+                            class="text-xs font-semibold text-outline-variant uppercase tracking-widest mr-2 py-1">Quick
+                            Tags:</span>
+                        <button
+                            class="text-sm bg-surface-container-low px-3 py-1 rounded-full hover:bg-surface-container-high text-on-surface-variant transition-colors">Parking</button>
+                        <button
+                            class="text-sm bg-surface-container-low px-3 py-1 rounded-full hover:bg-surface-container-high text-on-surface-variant transition-colors">Pharmacy</button>
+                        <button
+                            class="text-sm bg-surface-container-low px-3 py-1 rounded-full hover:bg-surface-container-high text-on-surface-variant transition-colors">Cafeteria</button>
+                        <button
+                            class="text-sm bg-surface-container-low px-3 py-1 rounded-full hover:bg-surface-container-high text-on-surface-variant transition-colors">Visiting
+                            Hours</button>
+                    </div>
+                </div>
+                <!-- Emergency Info Card -->
+                <div
+                    class="md:col-span-4 bg-tertiary-container p-8 rounded-full text-on-tertiary flex flex-col justify-between">
+                    <div>
+                        <span class="material-symbols-outlined text-4xl mb-4"
+                            data-icon="emergency_hospital">emergency</span>
+                        <h3 class="text-xl font-bold mb-2">ER Wait Times</h3>
+                    </div>
+                    <div>
+                        <p class="text-4xl font-extrabold mb-1">12 <span
+                                class="text-lg font-normal opacity-80">mins</span></p>
+                        <p class="text-sm opacity-90">Main Campus North Wing</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Navigation Categories -->
+        <section class="max-w-7xl mx-auto px-6 mb-20">
+            <div class="flex justify-between items-end mb-8">
+                <div>
+                    <h2 class="font-headline text-3xl font-bold text-blue-900">Hospital Directory</h2>
+                    <p class="text-on-surface-variant mt-2">Access key locations and services throughout our sanctuary.
+                    </p>
+                </div>
+                <button class="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all">
+                    View Full Directory <span class="material-symbols-outlined"
+                        data-icon="arrow_forward">arrow_forward</span>
+                </button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div
+                    class="bg-surface-container-low p-8 rounded-full group hover:bg-primary-fixed transition-all cursor-pointer">
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl" data-icon="map">map</span>
+                    </div>
+                    <h3 class="font-headline text-xl font-bold mb-2 text-on-surface">Interactive Map</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">Navigate between floors and buildings
+                        with step-by-step guidance.</p>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="bg-surface-container-low p-8 rounded-full group hover:bg-secondary-container transition-all cursor-pointer">
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-secondary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl"
+                            data-icon="medical_services">medical_services</span>
+                    </div>
+                    <h3 class="font-headline text-xl font-bold mb-2 text-on-surface">Departments</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">Specialized care centers from Cardiology
+                        to Pediatrics.</p>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-surface-container-low p-8 rounded-full group hover:bg-primary-fixed transition-all cursor-pointer">
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-primary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl" data-icon="person_search">person_search</span>
+                    </div>
+                    <h3 class="font-headline text-xl font-bold mb-2 text-on-surface">Physician Finder</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">Connect with our world-class medical
+                        professionals.</p>
+                </div>
+                <!-- Card 4 -->
+                <div
+                    class="bg-surface-container-low p-8 rounded-full group hover:bg-secondary-container transition-all cursor-pointer">
+                    <div
+                        class="w-12 h-12 bg-white rounded-xl flex items-center justify-center mb-6 shadow-sm group-hover:bg-secondary group-hover:text-white transition-colors">
+                        <span class="material-symbols-outlined text-3xl" data-icon="home_health">home_health</span>
+                    </div>
+                    <h3 class="font-headline text-xl font-bold mb-2 text-on-surface">Patient Portal</h3>
+                    <p class="text-on-surface-variant text-sm leading-relaxed">Access your medical records and lab
+                        results securely.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Asymmetric Featured Section -->
+        <section class="max-w-7xl mx-auto px-6 mb-20">
+            <div
+                class="bg-surface-container rounded-full overflow-hidden grid grid-cols-1 lg:grid-cols-2 items-stretch">
+                <div class="p-12 lg:p-20">
+                    <span class="text-secondary font-bold uppercase tracking-widest text-xs mb-4 block">New
+                        Feature</span>
+                    <h2 class="font-headline text-4xl font-bold text-on-surface mb-6 leading-tight">Finding your way is
+                        easier than ever with Wayfinding AR.</h2>
+                    <p class="text-on-surface-variant text-lg mb-10 leading-relaxed">
+                        Simply point your phone camera at our navigation markers and follow the virtual path directly to
+                        your destination. No more confusing signs or missed turns.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
+                                <span class="material-symbols-outlined text-lg" data-icon="check">check</span>
+                            </span>
+                            <span class="font-medium text-on-surface">Live Floor-by-Floor Navigation</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <span
+                                class="w-8 h-8 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
+                                <span class="material-symbols-outlined text-lg" data-icon="check">check</span>
+                            </span>
+                            <span class="font-medium text-on-surface">Elevator and Ramp Accessibility Routes</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative min-h-[400px]">
+                    <img alt="Person using smartphone navigation" class="absolute inset-0 w-full h-full object-cover"
+                        data-alt="Close up of a person's hand holding a modern smartphone displaying an augmented reality navigation app inside a bright, clean hospital corridor"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBcwNMekDh3PoQ_uFkBlYdwmzhkuWDwGtjxRhi7XcFYUlA4ltv6zmJoFexDGVie10zzipbgfuqty9mWlmHfUEPXvKUuhMB-if2_pRiRJ0WRNKwPognVMkEiKxtrfOZJPco6hjeMglheXHDnDulkHuIc3sKyz4KnQdufdXt3mh0z7Qng4OFACxoWMpkhusuj24G1W2tdsAyhSCOdGz_3O0isRj1MhLyoqdvRWFt3qnWSOt51O74_RbbM7oSYY-vFiOk9F2L54TpgNpOb" />
+                </div>
+            </div>
+        </section>
+    </main>
+    <!-- Footer Shell -->
+    <footer class="bg-slate-100 dark:bg-slate-950 w-full mt-auto py-12">
+        <div
+            class="grid grid-cols-1 md:grid-cols-4 gap-8 px-6 max-w-7xl mx-auto font-['Inter'] text-sm leading-relaxed">
+            <div class="col-span-1 md:col-span-1">
+                <a class="text-lg font-semibold text-blue-900 dark:text-blue-100 mb-4 block" href="#">The Clinical
+                    Sanctuary</a>
+                <p class="text-slate-500">Providing world-class medical care with an architectural focus on healing and
+                    clarity.</p>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h4 class="font-bold text-blue-900 dark:text-blue-200">Patient Resources</h4>
+                <a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                    href="#">Contact Us</a>
+                <a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                    href="#">Privacy Policy</a>
+                <a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                    href="#">Terms of Service</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h4 class="font-bold text-blue-900 dark:text-blue-200">Quick Help</h4>
+                <a class="text-blue-700 dark:text-blue-400 font-medium hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                    href="#">Emergency Guide</a>
+                <a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                    href="#">Find a Doctor</a>
+                <a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                    href="#">Wayfinding Support</a>
+            </div>
+            <div class="flex flex-col gap-4">
+                <h4 class="font-bold text-blue-900 dark:text-blue-200">Connect</h4>
+                <div class="flex gap-4">
+                    <span class="material-symbols-outlined text-slate-500 cursor-pointer" data-icon="share">share</span>
+                    <span class="material-symbols-outlined text-slate-500 cursor-pointer" data-icon="mail">mail</span>
+                </div>
+                <p class="text-xs text-slate-500 mt-4">© 2024 The Clinical Sanctuary. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <!-- Prev / Next page navigation -->
+    <div class="floating-nav" role="navigation" aria-label="Page navigation">
+        <a class="nav-btn prev" href="../department/code.html" title="Previous page">← Prev</a>
+        <a class="nav-btn home" href="../index.html" title="Index">🏠 Index</a>
+        <a class="nav-btn next" href="../booking/code.html" title="Next page">Next →</a>
+    </div>
+    <style>
+        .floating-nav {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(6px);
+            padding: 6px;
+            border-radius: 999px;
+            box-shadow: 0 6px 18px rgba(2, 6, 23, 0.12);
+            z-index: 9999
+        }
+
+        .floating-nav .nav-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            border-radius: 999px;
+            text-decoration: none;
+            color: #00488d;
+            font-weight: 600;
+            border: 1px solid rgba(0, 72, 141, 0.07);
+            background: transparent
+        }
+
+        .floating-nav .nav-btn:hover {
+            background: rgba(0, 72, 141, 0.06)
+        }
+    </style>
+</body>
+
+</html>
