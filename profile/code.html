@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>The Clinical Sanctuary | My Profile</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <!-- Material Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d7dadf",
+                        "surface-tint": "#005db5",
+                        "on-surface-variant": "#424752",
+                        "tertiary-container": "#006c5f",
+                        "error-container": "#ffdad6",
+                        "outline-variant": "#c2c6d4",
+                        "primary-fixed": "#d6e3ff",
+                        "on-primary-container": "#cadcff",
+                        "on-tertiary-container": "#8febda",
+                        "on-secondary-fixed-variant": "#005312",
+                        "on-surface": "#181c1f",
+                        "tertiary-fixed": "#97f3e2",
+                        "on-secondary-container": "#217128",
+                        "secondary-fixed-dim": "#88d982",
+                        "secondary-fixed": "#a3f69c",
+                        "on-primary-fixed": "#001b3d",
+                        "primary-container": "#005fb8",
+                        "secondary-container": "#a0f399",
+                        "on-tertiary-fixed": "#00201b",
+                        "on-primary-fixed-variant": "#00468b",
+                        "primary": "#00488d",
+                        "inverse-primary": "#a8c8ff",
+                        "background": "#f7f9fe",
+                        "surface-bright": "#f7f9fe",
+                        "surface": "#f7f9fe",
+                        "on-tertiary-fixed-variant": "#005047",
+                        "surface-container-low": "#f1f4f8",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "on-background": "#181c1f",
+                        "inverse-on-surface": "#eef1f6",
+                        "surface-container": "#ebeef3",
+                        "tertiary": "#005248",
+                        "surface-variant": "#e0e3e7",
+                        "secondary": "#1b6d24",
+                        "surface-container-high": "#e5e8ed",
+                        "inverse-surface": "#2d3134",
+                        "outline": "#727783",
+                        "on-error-container": "#93000a",
+                        "tertiary-fixed-dim": "#7ad7c6",
+                        "on-secondary-fixed": "#002204",
+                        "on-primary": "#ffffff",
+                        "primary-fixed-dim": "#a8c8ff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e0e3e7",
+                        "on-error": "#ffffff"
+                    },
+                    "fontFamily": {
+                        "headline": ["Public Sans"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #00488d 0%, #005fb8 100%);
+        }
+
+        .surface-lift {
+            box-shadow: 0px 12px 32px rgba(24, 28, 31, 0.06);
+        }
+    </style>
+</head>
+
+<body class="bg-background font-body text-on-surface antialiased min-h-screen flex flex-col">
+    <!-- Top Navigation Shell -->
+    <header
+        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+        <nav
+            class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto font-['Public_Sans'] antialiased tracking-tight">
+            <div class="flex items-center gap-8">
+                <a class="text-xl font-bold text-blue-900 dark:text-blue-100" href="../index.html">The Clinical
+                    Sanctuary</a>
+                <div class="hidden md:flex gap-6">
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
+                        href="../index.html">Home</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
+                        href="../booking/code.html">Booking Search</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
+                        href="../hospital/code.html">Map & Directory</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
+                        href="../department/code.html">Departments</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 sm:gap-4">
+                <button
+                    class="hidden sm:block bg-error text-on-error px-4 py-1.5 rounded-lg text-sm font-bold uppercase tracking-wider hover:opacity-90 transition-all">Emergency</button>
+                <div class="flex gap-1 sm:gap-2 text-slate-600">
+                    <div class="relative flex items-center">
+                        <button id="account-btn"
+                            class="material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors flex items-center justify-center outline-none focus:ring-2 focus:ring-blue-500"
+                            data-icon="account_circle">account_circle</button>
+                        <!-- Account Dropdown -->
+                        <div id="account-dropdown"
+                            class="hidden absolute right-0 top-full mt-2 w-64 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-4 z-50">
+                            <div
+                                class="flex items-center gap-3 mb-4 border-b border-slate-100 dark:border-slate-700 pb-3">
+                                <div
+                                    class="w-12 h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-xl uppercase">
+                                    JD</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 dark:text-slate-100">John Doe</h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Patient ID: #10924</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <a href="../profile/code.html"
+                                    class="text-sm text-blue-600 dark:text-blue-400 font-semibold flex items-center gap-2 py-1"><span
+                                        class="material-symbols-outlined text-[18px]">person</span> My Profile</a>
+                                <a href="#"
+                                    class="text-sm text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-2 py-1"><span
+                                        class="material-symbols-outlined text-[18px]">history</span> Medical History</a>
+                                <div class="h-px bg-slate-100 dark:bg-slate-700 my-1"></div>
+                                <a href="#"
+                                    class="text-sm text-error hover:text-red-700 flex items-center gap-2 py-1"><span
+                                        class="material-symbols-outlined text-[18px]">logout</span> Sign Out</a>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="hidden sm:block material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors"
+                        data-icon="help">help</button>
+                    <button id="mobile-menu-btn"
+                        class="md:hidden material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors flex items-center justify-center"
+                        aria-label="Toggle Menu">menu</button>
+                </div>
+            </div>
+        </nav>
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-slate-100 dark:border-slate-800 absolute w-full shadow-lg">
+            <div class="flex flex-col px-6 py-4 gap-4">
+                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600" href="../index.html">Home</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600" href="../booking/code.html">Booking
+                    Search</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600" href="../hospital/code.html">Map &
+                    Directory</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                    href="../department/code.html">Departments</a>
+                <div class="h-px bg-slate-100 dark:bg-slate-800 my-1"></div>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 flex items-center gap-2" href="#"><span
+                        class="material-symbols-outlined text-[18px]">help</span> Help & Support</a>
+                <button
+                    class="bg-error text-on-error px-4 py-2 rounded-lg text-sm font-bold uppercase tracking-wider w-full mt-2 sm:hidden">
+                    Emergency
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-28 pb-20 max-w-4xl mx-auto w-full px-6">
+        <h1 class="font-headline text-4xl font-bold text-blue-900 mb-2">My Profile</h1>
+        <p class="text-slate-500 mb-8">Update your personal information to help us provide you with the best care.</p>
+
+        <div class="bg-surface-container-lowest p-8 md:p-12 rounded-[2rem] surface-lift">
+            <div class="flex items-center gap-6 mb-10 pb-10 border-b border-slate-100">
+                <div
+                    class="w-24 h-24 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-4xl uppercase relative">
+                    JD
+                    <button
+                        class="absolute bottom-0 right-0 bg-white border border-slate-200 text-blue-700 p-2 rounded-full shadow-sm hover:bg-slate-50 transition-colors flex items-center justify-center">
+                        <span class="material-symbols-outlined text-[18px]">edit</span>
+                    </button>
+                </div>
+                <div>
+                    <h2 class="text-2xl font-bold text-slate-800">John Doe</h2>
+                    <p class="text-slate-500 font-medium">Patient ID: #10924</p>
+                </div>
+            </div>
+            <p id="status"></p>
+            <form id="myForm" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-600 mb-2" for="firstName">First
+                            Name</label>
+                        <input required type="text" id="firstName" name="firstName"
+                            class="w-full bg-surface-container-low px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-primary shadow-sm text-slate-800 placeholder-slate-400"
+                            placeholder="fist name">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-600 mb-2" for="lastName">Last Name</label>
+                        <input required type="text" id="lastName" name="lastName"
+                            class="w-full bg-surface-container-low px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-primary shadow-sm text-slate-800 placeholder-slate-400"
+                            placeholder="last name">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-600 mb-2" for="email">Email Address</label>
+                        <input required type="email" id="email" name="email"
+                            class="w-full bg-surface-container-low px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-primary shadow-sm text-slate-800 placeholder-slate-400"
+                            placeholder="johndoe@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-600 mb-2" for="phone">Phone Number</label>
+                        <input required type="tel" id="phone" name="phone"
+                            class="w-full bg-surface-container-low px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-primary shadow-sm text-slate-800 placeholder-slate-400"
+                            placeholder="+1 (555) 000-0000">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-600 mb-2" for="dob">Date of Birth</label>
+                        <input required type="date" id="dob" name="dob"
+                            class="w-full bg-surface-container-low px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-primary shadow-sm text-slate-800 placeholder-slate-400">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-600 mb-2" for="gender">Gender</label>
+                        <select id="gender" name="gender"
+                            class="w-full bg-surface-container-low px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-primary shadow-sm text-slate-800">
+                            <option value="">Select gender...</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                            <option value="PreferNotToSay">Prefer not to say</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-semibold text-slate-600 mb-2" for="address">Mailing Address</label>
+                    <textarea id="address" name="address" rows="3"
+                        class="w-full bg-surface-container-low px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-primary shadow-sm text-slate-800 placeholder-slate-400"
+                        placeholder="123 Wellness Ave, Suite 400..."></textarea>
+                </div>
+
+                <div class="pt-6 mt-6 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center gap-4">
+                    <div class="flex items-center gap-2 w-full md:w-auto">
+                        <input type="email" id="searchEmail" placeholder="Fetch an existing profile..." 
+                            class="w-full md:w-64 bg-surface-container-low px-4 py-3 rounded-xl border-none focus:ring-2 focus:ring-primary shadow-sm text-slate-800 placeholder-slate-400">
+                        <button type="button" onclick="loadData()"
+                            class="bg-blue-100 text-blue-700 font-bold py-3 px-6 rounded-xl shadow-sm hover:bg-blue-200 transition-colors flex items-center gap-2 whitespace-nowrap">
+                            <span class="material-symbols-outlined text-[18px]">search</span>
+                            Load Data
+                        </button>
+                    </div>
+                    <button type="submit"
+                        class="bg-primary text-white font-bold py-3 px-8 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 transition-all outline-none focus:ring-4 focus:ring-primary/30 flex items-center gap-2">
+                        <span class="material-symbols-outlined" data-icon="save">save</span>
+                        Save Profile
+                    </button>
+                </div>
+            </form>
+            <p id="status"></p>
+        </div>
+    </main>
+
+    <!-- Footer Shell -->
+    <footer class="bg-slate-100 font-body text-sm leading-relaxed w-full mt-auto py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-6 max-w-7xl mx-auto">
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold text-blue-900">The Clinical Sanctuary</h3>
+                <p class="text-slate-500 max-w-xs">Providing empathetic, architectural care for every patient journey
+                    since 1994.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-blue-900 mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="/index.html">Home</a></li>
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="/booking/code.html">Booking</a></li>
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="/hospital/code.html">Map & Directory</a></li>
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="/department/code.html">Departments</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-blue-900 mb-4">Navigation</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="#">Map &amp; Directory</a></li>
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="#">Department List</a></li>
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="#">Staff Portal</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-blue-900 mb-4">Contact</h4>
+                <p class="text-slate-500">1200 Wellness Plaza<br />Sanctuary District, SD 54012</p>
+                <p class="text-blue-700 font-medium mt-2">+91 9876543210</p>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-200">
+            <p class="text-slate-500 text-xs">© 2024 The Clinical Sanctuary. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById("myForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            const data = {
+                firstname: document.getElementById("firstName").value,
+                lastname: document.getElementById("lastName").value,
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value,
+                dob: document.getElementById("dob").value,
+                gender: document.getElementById("gender").value,
+                address: document.getElementById("address").value
+            };
+
+            fetch("https://script.google.com/macros/s/AKfycbwZ34JHKghYY0RPUQtVDdgBlylkStB1X4Be7Egd_8b49wKiNmgRb1k7sTGL9PuKpXin/exec", {
+                method: "POST",
+                body: JSON.stringify(data)
+            })
+                .then(res => res.json())
+                .then(response => {
+                    document.getElementById("status").innerText = "Data Saved!";
+                    document.getElementById("myForm").reset();
+                })
+                .catch(error => {
+                    document.getElementById("status").innerText = "Error!";
+                });
+        });
+        function loadData() {
+            let email = document.getElementById("searchEmail").value;
+            if (!email) {
+                alert("Please enter an email to search.");
+                return;
+            }
+            document.getElementById("status").innerText = "Searching Google Sheets...";
+
+            fetch("https://script.google.com/macros/s/AKfycbwZ34JHKghYY0RPUQtVDdgBlylkStB1X4Be7Egd_8b49wKiNmgRb1k7sTGL9PuKpXin/exec?email=" + encodeURIComponent(email))
+                .then(async res => {
+                    if (!res.ok) throw new Error("Server error: " + res.status);
+                    const text = await res.text(); // Read as text first to prevent hidden JSON parse errors
+                    try {
+                        return JSON.parse(text);
+                    } catch (e) {
+                        console.error("Failed to parse JSON. Raw response from Google:", text);
+                        throw new Error("Script did not return valid JSON. Ensure App Script 'doGet' returns ContentService.createTextOutput and is published to 'Anyone'.");
+                    }
+                })
+                .then(data => {
+                    document.getElementById("status").innerText = "";
+                    if (data.error) {
+                        alert("Data not found");
+                        return;
+                    }
+
+                    document.getElementById("firstName").value = data.firstname || "";
+                    document.getElementById("lastName").value = data.lastname || "";
+                    document.getElementById("email").value = data.email || "";
+                    document.getElementById("phone").value = data.phone || "";
+                    document.getElementById("dob").value = data.dob ? String(data.dob).split("T")[0] : "";
+                    document.getElementById("gender").value = data.gender || "";
+                    document.getElementById("address").value = data.address || "";
+                })
+                .catch(err => {
+                    document.getElementById("status").innerText = "";
+                    alert("Error loading data:\n" + err.message);
+                    console.error(err);
+                });
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu and Navbar logic
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const accountBtn = document.getElementById('account-btn');
+            const accountDropdown = document.getElementById('account-dropdown');
+
+            if (mobileMenuBtn) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    const isHidden = mobileMenu.classList.contains('hidden');
+                    if (isHidden) {
+                        mobileMenu.classList.remove('hidden');
+                        mobileMenuBtn.textContent = 'close';
+                        accountDropdown.classList.add('hidden');
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuBtn.textContent = 'menu';
+                    }
+                });
+            }
+
+            if (accountBtn) {
+                accountBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    accountDropdown.classList.toggle('hidden');
+                    if (!accountDropdown.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenuBtn.textContent = 'menu';
+                    }
+                });
+            }
+
+            document.addEventListener('click', (e) => {
+                if (accountBtn && accountDropdown && !accountBtn.contains(e.target) && !accountDropdown.contains(e.target)) {
+                    accountDropdown.classList.add('hidden');
+                }
+            });
+
+            if (accountDropdown) {
+                accountDropdown.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

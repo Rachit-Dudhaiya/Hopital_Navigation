@@ -104,37 +104,98 @@
 </head>
 
 <body class="bg-background text-on-surface min-h-screen flex flex-col">
-  <!-- Top Navigation Shell -->
-  <header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
-      <nav class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto font-['Public_Sans'] antialiased tracking-tight">
-          <div class="flex items-center gap-8">
-              <a class="text-xl font-bold text-blue-900 dark:text-blue-100" href="../index.html">The Clinical Sanctuary</a>
-              <div class="hidden md:flex gap-6">
-                  <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all" href="../index.html">Home</a>
-                  <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all" href="../booking/code.html">Booking Search</a>
-                  <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all" href="../hospital/code.html">Map & Directory</a>
-                  <a class="text-blue-700 dark:text-blue-300 border-b-2 border-blue-700 font-semibold pb-1 cursor-pointer active:opacity-80 transition-all" href="#">Departments</a>
-              </div>
-          </div>
-          <div class="flex items-center gap-4">
-              <button class="bg-error text-on-error px-4 py-1.5 rounded-lg text-sm font-bold uppercase tracking-wider hover:opacity-90 transition-all">Emergency</button>
-              <div class="flex gap-2 text-slate-600">
-                  <span class="material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors" data-icon="account_circle">account_circle</span>
-                  <span class="material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors" data-icon="help">help</span>
-              </div>
-          </div>
-      </nav>
-  </header>
+    <!-- Top Navigation Shell -->
+    <header
+        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+        <nav
+            class="flex justify-between items-center w-full px-6 py-4 max-w-7xl mx-auto font-['Public_Sans'] antialiased tracking-tight">
+            <div class="flex items-center gap-8">
+                <a class="text-xl font-bold text-blue-900 dark:text-blue-100" href="../index.html">The Clinical
+                    Sanctuary</a>
+                <div class="hidden md:flex gap-6">
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
+                        href="../index.html">Home</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
+                        href="../booking/code.html">Booking Search</a>
+                    <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
+                        href="../hospital/code.html">Map & Directory</a>
+                    <a class="text-blue-700 dark:text-blue-300 border-b-2 border-blue-700 font-semibold pb-1 cursor-pointer active:opacity-80 transition-all"
+                        href="#">Departments</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-2 sm:gap-4">
+                <button
+                    class="hidden sm:block bg-error text-on-error px-4 py-1.5 rounded-lg text-sm font-bold uppercase tracking-wider hover:opacity-90 transition-all">Emergency</button>
+                <div class="flex gap-1 sm:gap-2 text-slate-600">
+                    <div class="relative flex items-center">
+                        <button id="account-btn"
+                            class="material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors flex items-center justify-center outline-none focus:ring-2 focus:ring-blue-500"
+                            data-icon="account_circle">account_circle</button>
+                        <div id="account-dropdown"
+                            class="hidden absolute right-0 top-full mt-2 w-64 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-4 z-50">
+                            <div
+                                class="flex items-center gap-3 mb-4 border-b border-slate-100 dark:border-slate-700 pb-3">
+                                <div
+                                    class="w-12 h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-xl uppercase">
+                                    JD</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 dark:text-slate-100">John Doe</h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Patient ID: #10924</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <a href="../profile/code.html"
+                                    class="text-sm text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-2 py-1"><span
+                                        class="material-symbols-outlined text-[18px]">person</span> My Profile</a>
+                                <a href="#"
+                                    class="text-sm text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-2 py-1"><span
+                                        class="material-symbols-outlined text-[18px]">history</span> Medical History</a>
+                                <div class="h-px bg-slate-100 dark:bg-slate-700 my-1"></div>
+                                <a href="#"
+                                    class="text-sm text-error hover:text-red-700 flex items-center gap-2 py-1"><span
+                                        class="material-symbols-outlined text-[18px]">logout</span> Sign Out</a>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="hidden sm:block material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors"
+                        data-icon="help">help</button>
+                    <button id="mobile-menu-btn"
+                        class="md:hidden material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors flex items-center justify-center"
+                        aria-label="Toggle Menu">menu</button>
+                </div>
+            </div>
+        </nav>
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-slate-100 dark:border-slate-800 absolute w-full shadow-lg">
+            <div class="flex flex-col px-6 py-4 gap-4">
+                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 font-semibold"
+                    href="../index.html">Home</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600" href="../booking/code.html">Booking
+                    Search</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600" href="../hospital/code.html">Map &
+                    Directory</a>
+                <a class="text-blue-700 dark:text-blue-300 font-semibold" href="#">Departments</a>
+                <div class="h-px bg-slate-100 dark:bg-slate-800 my-1"></div>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 flex items-center gap-2" href="#"><span
+                        class="material-symbols-outlined text-[18px]">help</span> Help & Support</a>
+                <button
+                    class="bg-error text-on-error px-4 py-2 rounded-lg text-sm font-bold uppercase tracking-wider w-full mt-2 sm:hidden">
+                    Emergency
+                </button>
+            </div>
+        </div>
+    </header>
     <main class="flex-grow pt-24 pb-12 max-w-7xl mx-auto px-6 w-full">
         <!-- Urgency Banner -->
-        <div
+        <!-- <div
             class="mb-8 bg-tertiary-container text-on-tertiary-container px-6 py-3 rounded-xl flex items-center justify-between shadow-sm">
             <div class="flex items-center gap-3">
                 <span class="material-symbols-outlined">info</span>
                 <p class="text-sm font-medium">Department Update: Walk-in clinics are available today until 4:00 PM.</p>
             </div>
             <span class="material-symbols-outlined cursor-pointer">close</span>
-        </div>
+        </div> -->
         <!-- Breadcrumbs -->
         <nav class="mb-6 flex items-center gap-2 text-on-surface-variant text-sm font-medium">
             <span class="cursor-pointer hover:text-primary">Directory</span>
@@ -157,11 +218,13 @@
                         <span class="material-symbols-outlined">calendar_today</span>
                         Book Consultation
                     </button>
-                    <button
-                        class="bg-surface-container-high text-on-surface-variant px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:bg-surface-dim transition-all">
-                        <span class="material-symbols-outlined">call</span>
-                        Contact Desk
-                    </button>
+                    <a href="tel:+91 79844 17971">
+                        <button
+                            class="bg-surface-container-high text-on-surface-variant px-8 py-4 rounded-xl font-bold flex items-center gap-2 hover:bg-surface-dim transition-all">
+                            <span class="material-symbols-outlined">call</span>
+                            Contact Desk
+                        </button>
+                    </a>
                 </div>
             </div>
             <!-- Department Quick Facts Glass Card -->
@@ -197,7 +260,7 @@
                         <div>
                             <p class="text-xs uppercase tracking-widest text-on-surface-variant font-bold mb-1">Direct
                                 Line</p>
-                            <p class="text-lg font-bold">+1 (555) 012-3456</p>
+                            <p class="text-lg font-bold">+91 9876543210</p>
                         </div>
                     </div>
                 </div>
@@ -323,7 +386,8 @@
                         <p class="text-lg text-primary font-semibold mb-4">Board Certified in Cardiovascular Disease</p>
                         <p class="text-on-surface-variant leading-relaxed mb-6 italic">"Our mission is to treat every
                             patient with the same precision and care we would give our own family members."</p>
-                        <button onclick="window.location.href='../hospital/code.html'" class="text-primary font-bold flex items-center gap-2 hover:underline">
+                        <button onclick="window.location.href='../hospital/code.html'"
+                            class="text-primary font-bold flex items-center gap-2 hover:underline">
                             View Full Medical Team <span class="material-symbols-outlined">arrow_forward</span>
                         </button>
                     </div>
@@ -332,45 +396,53 @@
         </div>
     </main>
     <!-- Footer -->
-    <footer class="w-full mt-auto py-12 bg-slate-100 dark:bg-slate-950 font-['Inter'] text-sm leading-relaxed">
+    <footer class="bg-slate-100 font-body text-sm leading-relaxed w-full mt-auto py-12">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-6 max-w-7xl mx-auto">
-            <div class="col-span-1">
-                <div class="text-lg font-semibold text-blue-900 dark:text-blue-100 mb-4">The Clinical Sanctuary</div>
-                <p class="text-slate-500">Healing with empathy, innovation, and unwavering architectural calm.</p>
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold text-blue-900">The Clinical Sanctuary</h3>
+                <p class="text-slate-500 max-w-xs">Providing empathetic, architectural care for every patient journey
+                    since
+                    1994.</p>
             </div>
             <div>
-                <h4 class="font-bold text-blue-900 dark:text-blue-200 mb-4">Quick Links</h4>
-                <div class="flex flex-col gap-3">
-                    <a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all"
-                        href="#">Contact Us</a>
-                    <a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all"
-                        href="#">Privacy Policy</a>
-                </div>
+                <h4 class="font-bold text-blue-900 mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="/index.html">Home</a></li>
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="/booking/code.html">Booking</a></li>
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="/hospital/code.html">Map & Directory</a></li>
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="/department/code.html">Departments</a></li>
+                </ul>
             </div>
             <div>
-                <h4 class="font-bold text-blue-900 dark:text-blue-200 mb-4">Patient Support</h4>
-                <div class="flex flex-col gap-3">
-                    <a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all"
-                        href="#">Emergency Guide</a>
-                    <a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all"
-                        href="#">Terms of Service</a>
-                </div>
+                <h4 class="font-bold text-blue-900 mb-4">Navigation</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="#">Map &amp; Directory</a></li>
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="#">Department List</a></li>
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="#">Staff Portal</a></li>
+                </ul>
             </div>
             <div>
-                <h4 class="font-bold text-blue-900 dark:text-blue-200 mb-4">Contact Info</h4>
-                <p class="text-slate-500 mb-2">1200 Sanctuary Way<br />Medical District, NY 10012</p>
-                <p class="text-slate-500">General: (555) 123-4567</p>
+                <h4 class="font-bold text-blue-900 mb-4">Contact</h4>
+                <p class="text-slate-500">1200 Wellness Plaza<br />Sanctuary District, SD 54012</p>
+                <p class="text-blue-700 font-medium mt-2">+91 9876543210</p>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-200 dark:border-slate-800">
-            <p class="text-slate-500">© 2024 The Clinical Sanctuary. All rights reserved.</p>
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-200">
+            <p class="text-slate-500 text-xs">© 2024 The Clinical Sanctuary. All rights reserved.</p>
         </div>
     </footer>
     <!-- Prev / Next page navigation -->
-    <div class="floating-nav" role="navigation" aria-label="Page navigation">
+    <!-- <div class="floating-nav" role="navigation" aria-label="Page navigation">
         <a class="nav-btn prev" href="../hospital/code.html" title="Previous page">← Prev</a>
         <a class="nav-btn next" href="../index.html" title="Next page">Next →</a>
-    </div>
+    </div> -->
     <style>
         .floating-nav {
             position: fixed;
@@ -404,6 +476,45 @@
             background: rgba(0, 72, 141, 0.06)
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const accountBtn = document.getElementById('account-btn');
+            const accountDropdown = document.getElementById('account-dropdown');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenuBtn.textContent = 'close';
+                    accountDropdown.classList.add('hidden');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.textContent = 'menu';
+                }
+            });
+
+            accountBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                accountDropdown.classList.toggle('hidden');
+                if (!accountDropdown.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.textContent = 'menu';
+                }
+            });
+
+            document.addEventListener('click', (e) => {
+                if (!accountBtn.contains(e.target) && !accountDropdown.contains(e.target)) {
+                    accountDropdown.classList.add('hidden');
+                }
+            });
+
+            accountDropdown.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        });
+    </script>
 </body>
 
 </html>

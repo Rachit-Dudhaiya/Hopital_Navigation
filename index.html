@@ -123,21 +123,72 @@
                         href="department/code.html">Departments</a>
                 </div>
             </div>
-            <div class="flex items-center gap-4">
+            <div class="flex items-center gap-2 sm:gap-4">
                 <button
-                    class="bg-error text-on-error px-4 py-1.5 rounded-lg text-sm font-bold uppercase tracking-wider hover:opacity-90 transition-all">
+                    class="hidden sm:block bg-error text-on-error px-4 py-1.5 rounded-lg text-sm font-bold uppercase tracking-wider hover:opacity-90 transition-all">
                     Emergency
                 </button>
-                <div class="flex gap-2 text-slate-600">
-                    <span
-                        class="material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors"
-                        data-icon="account_circle">account_circle</span>
-                    <span
-                        class="material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors"
-                        data-icon="help">help</span>
+                <div class="flex gap-1 sm:gap-2 text-slate-600">
+                    <div class="relative flex items-center">
+                        <button id="account-btn"
+                            class="material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors flex items-center justify-center outline-none focus:ring-2 focus:ring-blue-500"
+                            data-icon="account_circle">account_circle</button>
+                        <!-- Account Dropdown -->
+                        <div id="account-dropdown"
+                            class="hidden absolute right-0 top-full mt-2 w-64 bg-white dark:bg-slate-800 rounded-xl shadow-xl border border-slate-200 dark:border-slate-700 p-4 z-50">
+                            <div
+                                class="flex items-center gap-3 mb-4 border-b border-slate-100 dark:border-slate-700 pb-3">
+                                <div
+                                    class="w-12 h-12 bg-blue-100 text-blue-700 rounded-full flex items-center justify-center font-bold text-xl uppercase">
+                                    JD</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 dark:text-slate-100">John Doe</h4>
+                                    <p class="text-xs text-slate-500 dark:text-slate-400">Patient ID: #10924</p>
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <a href="/profile/code.html"
+                                    class="text-sm text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-2 py-1"><span
+                                        class="material-symbols-outlined text-[18px]">person</span> My Profile</a>
+                                <a href="#"
+                                    class="text-sm text-slate-600 dark:text-slate-300 hover:text-blue-600 dark:hover:text-blue-400 flex items-center gap-2 py-1"><span
+                                        class="material-symbols-outlined text-[18px]">history</span> Medical History</a>
+                                <div class="h-px bg-slate-100 dark:bg-slate-700 my-1"></div>
+                                <a href="#"
+                                    class="text-sm text-error hover:text-red-700 flex items-center gap-2 py-1"><span
+                                        class="material-symbols-outlined text-[18px]">logout</span> Sign Out</a>
+                            </div>
+                        </div>
+                    </div>
+                    <button
+                        class="hidden sm:block material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors"
+                        data-icon="help">help</button>
+                    <button id="mobile-menu-btn"
+                        class="md:hidden material-symbols-outlined cursor-pointer hover:bg-slate-50/50 p-2 rounded-full transition-colors flex items-center justify-center"
+                        aria-label="Toggle Menu">menu</button>
                 </div>
             </div>
         </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu"
+            class="hidden md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-slate-100 dark:border-slate-800 absolute w-full shadow-lg">
+            <div class="flex flex-col px-6 py-4 gap-4">
+                <a class="text-blue-700 dark:text-blue-300 font-semibold" href="#">Home</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600" href="booking/code.html">Booking
+                    Search</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600" href="hospital/code.html">Map &
+                    Directory</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600"
+                    href="department/code.html">Departments</a>
+                <div class="h-px bg-slate-100 dark:bg-slate-800 my-1"></div>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 flex items-center gap-2" href="#"><span
+                        class="material-symbols-outlined text-[18px]">help</span> Help & Support</a>
+                <button
+                    class="bg-error text-on-error px-4 py-2 rounded-lg text-sm font-bold uppercase tracking-wider w-full mt-2 sm:hidden">
+                    Emergency
+                </button>
+            </div>
+        </div>
     </header>
     <main class="pt-24 pb-20">
         <!-- Hero Section -->
@@ -223,7 +274,8 @@
                     <p class="text-on-surface-variant mt-2">Access key locations and services throughout our sanctuary.
                     </p>
                 </div>
-                <button onclick="window.location.href='hospital/code.html'" class="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all">
+                <button onclick="window.location.href='hospital/code.html'"
+                    class="text-primary font-bold flex items-center gap-1 hover:gap-2 transition-all">
                     View Full Directory <span class="material-symbols-outlined"
                         data-icon="arrow_forward">arrow_forward</span>
                 </button>
@@ -315,48 +367,53 @@
         </section>
     </main>
     <!-- Footer Shell -->
-    <footer class="bg-slate-100 dark:bg-slate-950 w-full mt-auto py-12">
-        <div
-            class="grid grid-cols-1 md:grid-cols-4 gap-8 px-6 max-w-7xl mx-auto font-['Inter'] text-sm leading-relaxed">
-            <div class="col-span-1 md:col-span-1">
-                <a class="text-lg font-semibold text-blue-900 dark:text-blue-100 mb-4 block" href="#">The Clinical
-                    Sanctuary</a>
-                <p class="text-slate-500">Providing world-class medical care with an architectural focus on healing and
-                    clarity.</p>
+    <footer class="bg-slate-100 font-body text-sm leading-relaxed w-full mt-auto py-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8 px-6 max-w-7xl mx-auto">
+            <div class="space-y-4">
+                <h3 class="text-lg font-semibold text-blue-900">The Clinical Sanctuary</h3>
+                <p class="text-slate-500 max-w-xs">Providing empathetic, architectural care for every patient journey
+                    since
+                    1994.</p>
             </div>
-            <div class="flex flex-col gap-4">
-                <h4 class="font-bold text-blue-900 dark:text-blue-200">Patient Resources</h4>
-                <a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
-                    href="#">Contact Us</a>
-                <a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
-                    href="#">Privacy Policy</a>
-                <a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
-                    href="#">Terms of Service</a>
+            <div>
+                <h4 class="font-bold text-blue-900 mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="/index.html">Home</a></li>
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="/booking/code.html">Booking</a></li>
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="/hospital/code.html">Map & Directory</a></li>
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="/department/code.html">Departments</a></li>
+                </ul>
             </div>
-            <div class="flex flex-col gap-4">
-                <h4 class="font-bold text-blue-900 dark:text-blue-200">Quick Help</h4>
-                <a class="text-blue-700 dark:text-blue-400 font-medium hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
-                    href="#">Emergency Guide</a>
-                <a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
-                    href="#">Find a Doctor</a>
-                <a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
-                    href="#">Wayfinding Support</a>
+            <div>
+                <h4 class="font-bold text-blue-900 mb-4">Navigation</h4>
+                <ul class="space-y-2">
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="#">Map &amp; Directory</a></li>
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="#">Department List</a></li>
+                    <li><a class="text-slate-500 hover:underline decoration-blue-500 underline-offset-4 transition-all duration-200"
+                            href="#">Staff Portal</a></li>
+                </ul>
             </div>
-            <div class="flex flex-col gap-4">
-                <h4 class="font-bold text-blue-900 dark:text-blue-200">Connect</h4>
-                <div class="flex gap-4">
-                    <span class="material-symbols-outlined text-slate-500 cursor-pointer" data-icon="share">share</span>
-                    <span class="material-symbols-outlined text-slate-500 cursor-pointer" data-icon="mail">mail</span>
-                </div>
-                <p class="text-xs text-slate-500 mt-4">© 2024 The Clinical Sanctuary. All rights reserved.</p>
+            <div>
+                <h4 class="font-bold text-blue-900 mb-4">Contact</h4>
+                <p class="text-slate-500">1200 Wellness Plaza<br />Sanctuary District, SD 54012</p>
+                <p class="text-blue-700 font-medium mt-2">+91 9876543210</p>
             </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-slate-200">
+            <p class="text-slate-500 text-xs">© 2024 The Clinical Sanctuary. All rights reserved.</p>
         </div>
     </footer>
     <!-- Prev / Next page navigation -->
-    <div class="floating-nav" role="navigation" aria-label="Page navigation">
+    <!-- <div class="floating-nav" role="navigation" aria-label="Page navigation">
         <a class="nav-btn prev" href="department/code.html" title="Previous page">← Prev</a>
         <a class="nav-btn next" href="booking/code.html" title="Next page">Next →</a>
-    </div>
+    </div> -->
     <style>
         .floating-nav {
             position: fixed;
@@ -390,6 +447,51 @@
             background: rgba(0, 72, 141, 0.06)
         }
     </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const accountBtn = document.getElementById('account-btn');
+            const accountDropdown = document.getElementById('account-dropdown');
+
+            // Toggle Mobile Menu
+            mobileMenuBtn.addEventListener('click', () => {
+                const isHidden = mobileMenu.classList.contains('hidden');
+                if (isHidden) {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenuBtn.textContent = 'close';
+                    // Ensure account dropdown is closed
+                    accountDropdown.classList.add('hidden');
+                } else {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.textContent = 'menu';
+                }
+            });
+
+            // Toggle Account Dropdown
+            accountBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent document click from immediately closing it
+                accountDropdown.classList.toggle('hidden');
+                // Ensure mobile menu is closed when opening account dropdown
+                if (!accountDropdown.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuBtn.textContent = 'menu';
+                }
+            });
+
+            // Close dropdowns when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!accountBtn.contains(e.target) && !accountDropdown.contains(e.target)) {
+                    accountDropdown.classList.add('hidden');
+                }
+            });
+
+            // Prevent close when clicking inside dropdown
+            accountDropdown.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        });
+    </script>
 </body>
 
 </html>
