@@ -111,7 +111,7 @@
           <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
             href="../index.html">Home</a>
           <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
-            href="../booking/code.html">Booking Search</a>
+            href="../booking/code.html">Book Appointment  </a>
           <a class="text-blue-700 dark:text-blue-300 border-b-2 border-blue-700 font-semibold pb-1 cursor-pointer active:opacity-80 transition-all"
             href="#">Map & Directory</a>
           <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
@@ -197,7 +197,7 @@
           <span
             class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors"
             data-icon="search">search</span>
-          <input
+          <input id="directory-search"
             class="w-full pl-10 pr-4 py-3 bg-surface-container-highest border-none rounded-xl focus:ring-2 focus:ring-surface-tint/40 transition-all text-on-surface placeholder:text-outline"
             placeholder="Search departments, suites..." type="text" />
         </div>
@@ -216,11 +216,10 @@
       <!-- Scrollable List -->
       <div class="flex-grow overflow-y-auto px-4 pb-6 space-y-1">
         <!-- Group 1: Emergency & Critical -->
-        <div class="px-2 py-2">
+        <div class="px-2 py-2 directory-header">
           <span class="text-[10px] font-bold text-outline-variant uppercase tracking-widest">Urgent Care</span>
         </div>
-        <button
-          class="w-full flex items-center gap-4 p-4 rounded-xl bg-surface-container-lowest hover:bg-white shadow-sm transition-all group border border-transparent hover:border-surface-tint/10 text-left">
+        <button class="directory-item w-full flex items-center gap-4 p-4 rounded-xl bg-surface-container-lowest hover:bg-white shadow-sm transition-all group border border-transparent hover:border-surface-tint/10 text-left" data-title="Emergency Department" data-desc="Wait time: ~12 mins" data-floor="1" data-icon="emergency" data-top="20%" data-left="45%">
           <div class="w-10 h-10 rounded-lg bg-error-container flex items-center justify-center text-error">
             <span class="material-symbols-outlined" data-icon="emergency" data-weight="fill"
               style="font-variation-settings: 'FILL' 1;">emergency</span>
@@ -233,11 +232,10 @@
             data-icon="chevron_right">chevron_right</span>
         </button>
         <!-- List Items -->
-        <div class="px-2 py-4">
+        <div class="px-2 py-4 directory-header">
           <span class="text-[10px] font-bold text-outline-variant uppercase tracking-widest">Medical Suites</span>
         </div>
-        <button onclick="window.location.href='../department/code.html'"
-          class="w-full flex items-center gap-4 p-4 rounded-xl hover:bg-surface-container-high transition-all group text-left">
+        <button class="directory-item w-full flex items-center gap-4 p-4 rounded-xl hover:bg-surface-container-high transition-all group text-left" data-title="Cardiology Center" data-desc="Wait time: ~15 mins" data-floor="3" data-icon="cardiology" data-top="50%" data-left="50%">
           <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
             <span class="material-symbols-outlined" data-icon="cardiology">cardiology</span>
           </div>
@@ -246,8 +244,7 @@
             <p class="text-xs text-on-surface-variant">East Wing, Floor 3, Suite 304</p>
           </div>
         </button>
-        <button
-          class="w-full flex items-center gap-4 p-4 rounded-xl hover:bg-surface-container-high transition-all group text-left">
+        <button class="directory-item w-full flex items-center gap-4 p-4 rounded-xl hover:bg-surface-container-high transition-all group text-left" data-title="Neurology Institute" data-desc="Wait time: ~5 mins" data-floor="2" data-icon="neurology" data-top="30%" data-left="70%">
           <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
             <span class="material-symbols-outlined" data-icon="neurology">neurology</span>
           </div>
@@ -256,8 +253,7 @@
             <p class="text-xs text-on-surface-variant">West Wing, Floor 2, Suite 210</p>
           </div>
         </button>
-        <button
-          class="w-full flex items-center gap-4 p-4 rounded-xl hover:bg-surface-container-high transition-all group text-left">
+        <button class="directory-item w-full flex items-center gap-4 p-4 rounded-xl hover:bg-surface-container-high transition-all group text-left" data-title="Diagnostic Imaging" data-desc="Wait time: ~20 mins" data-floor="B" data-icon="radiology" data-top="80%" data-left="60%">
           <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
             <span class="material-symbols-outlined" data-icon="radiology">radiology</span>
           </div>
@@ -266,11 +262,10 @@
             <p class="text-xs text-on-surface-variant">Central Wing, Basement Level</p>
           </div>
         </button>
-        <div class="px-2 py-4">
+        <div class="px-2 py-4 directory-header">
           <span class="text-[10px] font-bold text-outline-variant uppercase tracking-widest">Facilities</span>
         </div>
-        <button
-          class="w-full flex items-center gap-4 p-4 rounded-xl hover:bg-surface-container-high transition-all group text-left">
+        <button class="directory-item w-full flex items-center gap-4 p-4 rounded-xl hover:bg-surface-container-high transition-all group text-left" data-title="Pharmacy" data-desc="Open 24/7" data-floor="1" data-icon="local_pharmacy" data-top="70%" data-left="25%">
           <div
             class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center text-on-secondary-container">
             <span class="material-symbols-outlined" data-icon="local_pharmacy">local_pharmacy</span>
@@ -280,8 +275,7 @@
             <p class="text-xs text-on-surface-variant">Main Lobby, North Entrance</p>
           </div>
         </button>
-        <button
-          class="w-full flex items-center gap-4 p-4 rounded-xl hover:bg-surface-container-high transition-all group text-left">
+        <button class="directory-item w-full flex items-center gap-4 p-4 rounded-xl hover:bg-surface-container-high transition-all group text-left" data-title="The Healing Café" data-desc="Open until 8pm" data-floor="2" data-icon="restaurant" data-top="40%" data-left="30%">
           <div class="w-10 h-10 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary">
             <span class="material-symbols-outlined" data-icon="restaurant">restaurant</span>
           </div>
@@ -294,83 +288,85 @@
     </aside>
     <!-- Interactive Map Canvas -->
     <section class="flex-grow relative bg-surface overflow-hidden">
-      <!-- Map Background Representation -->
-      <div class="absolute inset-0 z-0">
-        <img
-          alt="Detailed architectural 3D layout plan of a modern hospital campus showing various wings and departments"
-          class="w-full h-full object-cover opacity-60 grayscale-[0.3]"
-          data-alt="Modern 3D architectural rendering of a high-tech hospital campus layout with clean lines, glass structures, and labeled medical wings"
-          src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu9qW1c_9M5aptDtSKw0o28icQVErPSQzj0mOs-_CRqTfuZU1diwAtCKCgxaJDdDIsbzSbJPzkqaX2rK9I093WH3Kz-GvH3oxXRbpSr3IHN5aHyWlMHpD1e3_SdtEnw_JzAWUxH40UbxyWiLDV64oNP1WXP4QEv_wXW5YMo8DEqGPAH6woAA9R14OkkCxQuAVul0-mmpUsx1jbGpAheiFblsFAg-zOUxz8lq2XrmAXd0NL5ZlM2LCmEMn-jPQbJjfscZjs2ULtSQ5G" />
-        <!-- SVG Overlay for Interactive Zones (Abstracted) -->
-        <svg class="absolute inset-0 w-full h-full pointer-events-none" preserveaspectratio="xMidYMid slice"
-          viewbox="0 0 1000 1000">
-          <path d="M100,100 L400,100 L400,400 L100,400 Z" fill="rgba(0, 72, 141, 0.05)" stroke="rgba(0, 72, 141, 0.2)"
-            stroke-width="2"></path>
-          <path d="M500,150 L800,150 L800,500 L500,500 Z" fill="rgba(27, 109, 36, 0.05)" stroke="rgba(27, 109, 36, 0.2)"
-            stroke-width="2"></path>
-          <path d="M200,600 L600,600 L600,900 L200,900 Z" fill="rgba(186, 26, 26, 0.05)" stroke="rgba(186, 26, 26, 0.2)"
-            stroke-width="2"></path>
-        </svg>
+      <!-- Map Content Transform Container -->
+      <div id="map-transform-container" class="absolute inset-0 w-full h-full transition-transform duration-300 ease-out origin-center">
+        <!-- Map Background Representation -->
+        <div class="absolute inset-0 z-0 bg-slate-100 flex items-center justify-center">
+          <img id="hospital-map-image"
+            alt="Detailed architectural layout plan"
+            class="w-full h-full object-cover opacity-60 grayscale-[0.3] transition-opacity duration-300"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDu9qW1c_9M5aptDtSKw0o28icQVErPSQzj0mOs-_CRqTfuZU1diwAtCKCgxaJDdDIsbzSbJPzkqaX2rK9I093WH3Kz-GvH3oxXRbpSr3IHN5aHyWlMHpD1e3_SdtEnw_JzAWUxH40UbxyWiLDV64oNP1WXP4QEv_wXW5YMo8DEqGPAH6woAA9R14OkkCxQuAVul0-mmpUsx1jbGpAheiFblsFAg-zOUxz8lq2XrmAXd0NL5ZlM2LCmEMn-jPQbJjfscZjs2ULtSQ5G" />
+          <!-- SVG Overlay for Interactive Zones (Abstracted) -->
+          <svg id="map-svg-overlay" class="absolute inset-0 w-full h-full pointer-events-none" preserveaspectratio="xMidYMid slice"
+            viewbox="0 0 1000 1000">
+            <path d="M100,100 L400,100 L400,400 L100,400 Z" fill="rgba(0, 72, 141, 0.05)" stroke="rgba(0, 72, 141, 0.2)"
+              stroke-width="2"></path>
+            <path d="M500,150 L800,150 L800,500 L500,500 Z" fill="rgba(27, 109, 36, 0.05)" stroke="rgba(27, 109, 36, 0.2)"
+              stroke-width="2"></path>
+            <path d="M200,600 L600,600 L600,900 L200,900 Z" fill="rgba(186, 26, 26, 0.05)" stroke="rgba(186, 26, 26, 0.2)"
+              stroke-width="2"></path>
+          </svg>
+        </div>
+        
+        <!-- Active Location Marker (Floating UI Tooltip) -->
+        <div id="active-pin-container" class="absolute z-10 pointer-events-none transition-all duration-700 ease-in-out" style="top: 50%; left: 50%; transform: translate(-50%, -50%);">
+          <div id="active-pin-tooltip" class="relative flex flex-col items-center origin-bottom transition-transform duration-300">
+            <div class="bg-white p-4 rounded-2xl shadow-2xl flex items-center gap-4 border border-surface-tint/20 pointer-events-auto">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
+                <span id="active-pin-icon" class="material-symbols-outlined text-primary text-3xl" data-icon="cardiology">cardiology</span>
+              </div>
+              <div class="min-w-[150px]">
+                <div class="flex items-center gap-2">
+                  <span class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded font-bold uppercase tracking-wider">Active Pin</span>
+                  <span id="active-pin-floor-label" class="text-[10px] text-outline">FLOOR 3</span>
+                </div>
+                <h4 id="active-pin-title" class="font-bold text-on-surface whitespace-nowrap">Cardiology Center</h4>
+                <p id="active-pin-desc" class="text-xs text-on-surface-variant">Wait time: ~15 mins</p>
+              </div>
+              <button onclick="window.location.href='../department/code.html'" class="bg-primary text-white p-2 rounded-lg hover:bg-primary-container transition-colors ml-4 justify-self-end">
+                <span class="material-symbols-outlined" data-icon="directions">directions</span>
+              </button>
+            </div>
+            <div class="w-4 h-4 bg-white rotate-45 -mt-2 border-r border-b border-surface-tint/20 pointer-events-auto"></div>
+            <div class="w-3 h-3 bg-primary rounded-full mt-2 animate-pulse shadow-[0_0_15px_rgba(0,72,141,0.5)]"></div>
+          </div>
+        </div>
       </div>
+
       <!-- Floating Map Controls -->
       <div class="absolute top-6 left-6 z-20 flex flex-col gap-2">
         <div class="map-glass p-1 rounded-xl flex flex-col shadow-lg">
-          <button class="p-3 hover:bg-surface-container text-primary transition-colors rounded-lg">
+          <button id="zoom-in-btn" class="p-3 hover:bg-surface-container text-primary transition-colors rounded-lg">
             <span class="material-symbols-outlined" data-icon="add">add</span>
           </button>
           <div class="h-px bg-outline-variant/30 mx-2"></div>
-          <button class="p-3 hover:bg-surface-container text-primary transition-colors rounded-lg">
+          <button id="zoom-out-btn" class="p-3 hover:bg-surface-container text-primary transition-colors rounded-lg">
             <span class="material-symbols-outlined" data-icon="remove">remove</span>
           </button>
         </div>
-        <button class="map-glass p-3 rounded-xl shadow-lg hover:bg-surface-container text-primary transition-colors">
+        <button id="zoom-reset-btn" class="map-glass p-3 rounded-xl shadow-lg hover:bg-surface-container text-primary transition-colors">
           <span class="material-symbols-outlined" data-icon="my_location">my_location</span>
         </button>
+        <label for="map-upload" class="map-glass mt-2 p-3 rounded-xl shadow-lg hover:bg-surface-container text-primary transition-colors cursor-pointer flex items-center justify-center relative group" title="Upload custom map for current floor">
+          <span class="material-symbols-outlined">upload_file</span>
+          <span class="absolute left-full ml-3 px-3 py-1 bg-surface-container-highest text-on-surface text-xs whitespace-nowrap rounded font-bold opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-sm">Upload Map to Floor <span id="tooltip-floor-label">3</span></span>
+        </label>
+        <input type="file" id="map-upload" accept="image/*" class="hidden">
       </div>
+      
       <!-- Floor Selector -->
       <div class="absolute top-6 right-6 z-20 flex flex-col gap-2">
         <div class="map-glass p-2 rounded-2xl shadow-lg flex flex-col items-center">
           <span class="text-[10px] font-bold text-outline mb-2">FLOOR</span>
-          <button
-            class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-sm font-bold">5</button>
-          <button
-            class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-sm font-bold">4</button>
-          <button
-            class="w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-on-primary shadow-md text-sm font-bold">3</button>
-          <button
-            class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-sm font-bold">2</button>
-          <button
-            class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-sm font-bold">1</button>
-          <button
-            class="w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-sm font-bold text-primary">B</button>
+          <button data-floor="5" class="floor-btn w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-sm font-bold transition-all">5</button>
+          <button data-floor="4" class="floor-btn w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-sm font-bold transition-all">4</button>
+          <button data-floor="3" class="floor-btn w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-on-primary shadow-md text-sm font-bold transition-all">3</button>
+          <button data-floor="2" class="floor-btn w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-sm font-bold transition-all">2</button>
+          <button data-floor="1" class="floor-btn w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-sm font-bold transition-all">1</button>
+          <button data-floor="B" class="floor-btn w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-sm font-bold text-primary transition-all">B</button>
         </div>
       </div>
-      <!-- Active Location Marker (Floating UI Tooltip) -->
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 pointer-events-none">
-        <div class="relative flex flex-col items-center">
-          <div
-            class="bg-white p-4 rounded-2xl shadow-2xl flex items-center gap-4 border border-surface-tint/20 pointer-events-auto">
-            <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center">
-              <span class="material-symbols-outlined text-primary text-3xl" data-icon="cardiology">cardiology</span>
-            </div>
-            <div>
-              <div class="flex items-center gap-2">
-                <span
-                  class="text-[10px] bg-primary/10 text-primary px-2 py-0.5 rounded font-bold uppercase tracking-wider">Active
-                  Pin</span>
-                <span class="text-[10px] text-outline">FLOOR 3</span>
-              </div>
-              <h4 class="font-bold text-on-surface">Cardiology Center</h4>
-              <p class="text-xs text-on-surface-variant">Wait time: ~15 mins</p>
-            </div>
-            <button class="bg-primary text-white p-2 rounded-lg hover:bg-primary-container transition-colors ml-4">
-              <span class="material-symbols-outlined" data-icon="directions">directions</span>
-            </button>
-          </div>
-          <div class="w-4 h-4 bg-white rotate-45 -mt-2 border-r border-b border-surface-tint/20"></div>
-          <div class="w-3 h-3 bg-primary rounded-full mt-2 animate-pulse shadow-[0_0_15px_rgba(0,72,141,0.5)]"></div>
-        </div>
-      </div>
+
       <!-- Map Legend (Bottom Right) -->
       <div class="absolute bottom-6 right-6 z-20 map-glass p-4 rounded-2xl shadow-lg max-w-xs">
         <h5 class="text-xs font-bold text-primary mb-3">CAMPUS LEGEND</h5>
@@ -518,6 +514,214 @@
 
       accountDropdown.addEventListener('click', (e) => {
         e.stopPropagation();
+      });
+
+      // Flooring and Upload System
+      const mapImage = document.getElementById('hospital-map-image');
+      const svgOverlay = document.getElementById('map-svg-overlay');
+      const floorBtns = document.querySelectorAll('.floor-btn');
+      const mapUpload = document.getElementById('map-upload');
+      const tooltipFloorLabel = document.getElementById('tooltip-floor-label');
+      const activePinFloorLabel = document.getElementById('active-pin-floor-label');
+      const activePinTitle = document.getElementById('active-pin-title');
+      const activePinDesc = document.getElementById('active-pin-desc');
+      const activePinIcon = document.getElementById('active-pin-icon');
+      const activePinContainer = document.getElementById('active-pin-container');
+      const directoryItems = document.querySelectorAll('.directory-item');
+      
+      const defaultImageUrl = mapImage.src;
+      let currentFloor = '3';
+      
+      // Store map src corresponding to each floor. Default null implies use default map.
+      const savedMapsRaw = localStorage.getItem('hospital_floor_maps');
+      const floorMaps = savedMapsRaw ? JSON.parse(savedMapsRaw) : {
+        '5': null,
+        '4': null,
+        '3': null,
+        '2': null,
+        '1': null,
+        'B': null
+      };
+
+      // Initialize map for default floor if it exists in storage
+      if (floorMaps[currentFloor]) {
+         mapImage.src = floorMaps[currentFloor];
+         svgOverlay.style.display = 'none';
+         mapImage.classList.remove('opacity-60', 'grayscale-[0.3]');
+         mapImage.classList.add('opacity-100');
+      }
+
+      // Switch floor logic
+      floorBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          // Update active btn styling
+          floorBtns.forEach(b => {
+             b.classList.remove('bg-primary', 'text-on-primary', 'shadow-md');
+             b.classList.add('hover:bg-surface-container');
+             if(b.dataset.floor === 'B') b.classList.add('text-primary'); 
+          });
+          btn.classList.add('bg-primary', 'text-on-primary', 'shadow-md');
+          btn.classList.remove('hover:bg-surface-container', 'text-primary');
+          
+          currentFloor = btn.dataset.floor;
+          tooltipFloorLabel.textContent = currentFloor;
+          activePinFloorLabel.textContent = 'FLOOR ' + currentFloor;
+          
+          if (typeof filterDirectory === 'function') {
+              filterDirectory(currentFloor);
+          }
+          filterDirectory(currentFloor);
+          
+          // Switch map image
+          mapImage.style.opacity = '0';
+          setTimeout(() => {
+             if(floorMaps[currentFloor]) {
+                mapImage.src = floorMaps[currentFloor];
+                svgOverlay.style.display = 'none'; // hide abstract regions for custom maps
+                mapImage.classList.remove('opacity-60', 'grayscale-[0.3]');
+                mapImage.classList.add('opacity-100');
+             } else {
+                mapImage.src = defaultImageUrl;
+                svgOverlay.style.display = 'block';
+                mapImage.classList.add('opacity-60', 'grayscale-[0.3]');
+                mapImage.classList.remove('opacity-100');
+             }
+             mapImage.style.opacity = '1';
+          }, 150);
+        });
+      });
+
+      const directoryHeaders = document.querySelectorAll('.directory-header');
+      const searchInput = document.getElementById('directory-search');
+
+      // Function to show only items on current floor
+      function filterDirectory(floor) {
+          const searchTerm = searchInput.value.toLowerCase();
+          
+          directoryItems.forEach(item => {
+              const itemTitle = item.dataset.title.toLowerCase();
+              const itemDesc = item.dataset.desc.toLowerCase();
+              
+              const matchesFloor = item.dataset.floor === floor;
+              const matchesSearch = itemTitle.includes(searchTerm) || itemDesc.includes(searchTerm);
+              
+              if (matchesFloor && matchesSearch) {
+                  item.style.display = 'flex';
+              } else {
+                  item.style.display = 'none';
+              }
+          });
+          
+          directoryHeaders.forEach(header => {
+             let nextEl = header.nextElementSibling;
+             let hasVisible = false;
+             while(nextEl && !nextEl.classList.contains('directory-header')) {
+                 if (nextEl.classList.contains('directory-item') && nextEl.style.display !== 'none') {
+                     hasVisible = true;
+                     break;
+                 }
+                 nextEl = nextEl.nextElementSibling;
+             }
+             header.style.display = hasVisible ? 'block' : 'none';
+          });
+      }
+
+      // Initial filter on load
+      filterDirectory(currentFloor);
+
+      // Search interaction
+      searchInput.addEventListener('input', () => {
+          filterDirectory(currentFloor);
+      });
+
+      // Directory interaction
+      directoryItems.forEach(item => {
+          item.addEventListener('click', () => {
+              const floor = item.dataset.floor;
+              const title = item.dataset.title;
+              const desc = item.dataset.desc;
+              const icon = item.dataset.icon;
+              const top = item.dataset.top;
+              const left = item.dataset.left;
+              
+              // Switch floor if needed
+              if (currentFloor !== floor) {
+                  const targetBtn = Array.from(floorBtns).find(b => b.dataset.floor === floor);
+                  if (targetBtn) targetBtn.click(); // simulate click to use existing logic
+              }
+              
+              // Move and update pin
+              activePinTitle.textContent = title;
+              activePinDesc.textContent = desc;
+              activePinIcon.textContent = icon;
+              activePinContainer.style.top = top;
+              activePinContainer.style.left = left;
+              
+              // Reset zoom and tooltip scale when clicking a new location to keep UI visible
+              currentZoom = 1;
+              mapTransformContainer.style.transform = `scale(1)`;
+              activePinTooltip.style.transform = `scale(1)`;
+          });
+      });
+
+      // Zoom Control Logic
+      const zoomInBtn = document.getElementById('zoom-in-btn');
+      const zoomOutBtn = document.getElementById('zoom-out-btn');
+      const zoomResetBtn = document.getElementById('zoom-reset-btn');
+      const mapTransformContainer = document.getElementById('map-transform-container');
+      const activePinTooltip = document.getElementById('active-pin-tooltip');
+      let currentZoom = 1;
+
+      function updateZoom(newZoom) {
+          // Clamp zoom level between 0.5 and 3x
+          currentZoom = Math.max(0.5, Math.min(newZoom, 3));
+          
+          // Apply zoom transform to the container holding the map and the pin's coordinates
+          mapTransformContainer.style.transform = `scale(${currentZoom})`;
+          
+          // Counter-scale the tooltip itself so it doesn't become massive
+          if (currentZoom > 1) {
+              activePinTooltip.style.transform = `scale(${1 / currentZoom})`;
+          } else {
+              activePinTooltip.style.transform = `scale(1)`;
+          }
+      }
+
+      zoomInBtn.addEventListener('click', () => updateZoom(currentZoom + 0.5));
+      zoomOutBtn.addEventListener('click', () => updateZoom(currentZoom - 0.5));
+      
+      zoomResetBtn.addEventListener('click', () => {
+          updateZoom(1);
+      });
+
+      // Upload map logic
+      mapUpload.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if(!file) return;
+
+        const reader = new FileReader();
+        reader.onload = (event) => {
+            const dataUrl = event.target.result;
+            floorMaps[currentFloor] = dataUrl;
+            
+            try {
+                localStorage.setItem('hospital_floor_maps', JSON.stringify(floorMaps));
+            } catch (err) {
+                console.error("Local storage error:", err);
+                alert('Warning: This image is too large to permanently save to your browser. It will only be shown for this current session.');
+            }
+            
+            // Immediately trigger re-render of current floor
+            mapImage.style.opacity = '0';
+            setTimeout(() => {
+               mapImage.src = dataUrl;
+               svgOverlay.style.display = 'none';
+               mapImage.classList.remove('opacity-60', 'grayscale-[0.3]');
+               mapImage.classList.add('opacity-100');
+               mapImage.style.opacity = '1';
+            }, 150);
+        };
+        reader.readAsDataURL(file);
       });
     });
   </script>

@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-  <title>Booking Search | The Clinical Sanctuary</title>
+  <title>Book Appointment | The Clinical Sanctuary</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link
     href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
@@ -107,7 +107,7 @@
           <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
             href="../index.html">Home</a>
           <a class="text-blue-700 dark:text-blue-300 border-b-2 border-blue-700 font-semibold pb-1 cursor-pointer active:opacity-80 transition-all"
-            href="#">Booking Search</a>
+            href="#">Book Appointment</a>
           <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
             href="../hospital/code.html">Map & Directory</a>
           <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
@@ -159,7 +159,7 @@
       class="hidden md:hidden bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl border-t border-slate-100 dark:border-slate-800 absolute w-full shadow-lg">
       <div class="flex flex-col px-6 py-4 gap-4">
         <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 font-semibold" href="../index.html">Home</a>
-        <a class="text-blue-700 dark:text-blue-300 font-semibold" href="#">Booking Search</a>
+        <a class="text-blue-700 dark:text-blue-300 font-semibold" href="#">Book Appointment</a>
         <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600" href="../hospital/code.html">Map &
           Directory</a>
         <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600" href="../department/code.html">Departments</a>
@@ -181,47 +181,63 @@
   <!-- Main Content Canvas -->
   <main class="flex-grow max-w-7xl mx-auto  mt-9 px-6 py-12 w-full">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-      <!-- Search Section -->
-      <section class="lg:col-span-5 flex flex-col gap-8">
+      <!-- Booking Form Section -->
+      <section id="booking-form-section" class="lg:col-span-5 flex flex-col gap-8">
         <header>
           <h1 class="font-headline text-4xl lg:text-5xl font-extrabold text-primary mb-4 tracking-tight leading-tight">
-            Find your<br />appointment.
+            Book an<br />appointment.
           </h1>
           <p class="text-on-surface-variant text-lg max-w-md">
-            Enter your 8-digit booking reference number to view your schedule and location details.
+            Select a department, doctor, and time to schedule your visit.
           </p>
         </header>
         <div class="bg-surface-container-lowest p-8 rounded-xl shadow-sm">
-          <div class="space-y-6">
+          <form id="booking-form" class="space-y-5" onsubmit="event.preventDefault(); submitBooking();">
             <div>
-              <label class="block text-sm font-semibold text-on-surface-variant mb-2 font-label">Booking Reference
-                Number</label>
+              <label class="block text-sm font-semibold text-on-surface-variant mb-2 font-label">Department</label>
               <div class="relative">
-                <input
-                  class="w-full bg-surface-container-highest border-none rounded-lg px-4 py-4 text-lg font-mono focus:ring-2 focus:ring-surface-tint/40 transition-all outline-none"
-                  placeholder="e.g. CS-992341" type="text" />
-                <span
-                  class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+                <select id="select-dept" class="w-full bg-surface-container-highest border-none rounded-lg px-4 py-3 text-base focus:ring-2 focus:ring-surface-tint/40 transition-all outline-none appearance-none cursor-pointer" required>
+                  <option value="" disabled selected>Select a department</option>
+                  <option value="Cardiology">Cardiology Unit</option>
+                  <option value="Neurology">Neurology Center</option>
+                  <option value="Pediatrics">Pediatrics</option>
+                  <option value="Orthopedics">Orthopedics</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
               </div>
             </div>
-            <button onclick="window.location.href='../hospital/code.html'"
-              class="w-full bg-gradient-primary text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-primary/20 transition-all flex justify-center items-center gap-2">
-              Locate Appointment
-              <span class="material-symbols-outlined">arrow_forward</span>
+            <div>
+              <label class="block text-sm font-semibold text-on-surface-variant mb-2 font-label">Doctor</label>
+              <div class="relative">
+                <select id="select-doc" class="w-full bg-surface-container-highest border-none rounded-lg px-4 py-3 text-base focus:ring-2 focus:ring-surface-tint/40 transition-all outline-none appearance-none cursor-pointer" required>
+                  <option value="" disabled selected>Select a doctor</option>
+                  <option value="Dr. Benjamin A. Richardson">Dr. Benjamin A. Richardson</option>
+                  <option value="Dr. Sarah Jenkins">Dr. Sarah Jenkins</option>
+                  <option value="Dr. Alan Turing">Dr. Alan Turing</option>
+                </select>
+                <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-outline pointer-events-none">expand_more</span>
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-semibold text-on-surface-variant mb-2 font-label">Date</label>
+                <input id="select-date" type="date" class="w-full bg-surface-container-highest border-none rounded-lg px-4 py-3 text-base text-on-surface focus:ring-2 focus:ring-surface-tint/40 transition-all outline-none cursor-pointer" required />
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-on-surface-variant mb-2 font-label">Time</label>
+                <input id="select-time" type="time" class="w-full bg-surface-container-highest border-none rounded-lg px-4 py-3 text-base text-on-surface focus:ring-2 focus:ring-surface-tint/40 transition-all outline-none cursor-pointer" required />
+              </div>
+            </div>
+            <button type="submit"
+              class="w-full mt-4 bg-gradient-primary text-white py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-primary/20 transition-all flex justify-center items-center gap-2 group">
+              Confirm Booking
+              <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">event_available</span>
             </button>
-          </div>
-        </div>
-        <div class="bg-surface-container-low p-6 rounded-xl flex items-start gap-4">
-          <span class="material-symbols-outlined text-secondary">security</span>
-          <div>
-            <h4 class="font-semibold text-secondary">Privacy Guaranteed</h4>
-            <p class="text-sm text-on-surface-variant">Your medical information is encrypted and only visible to you
-              using this secure token.</p>
-          </div>
+          </form>
         </div>
       </section>
-      <!-- Results Section (Initially hidden or shown as a placeholder) -->
-      <section class="lg:col-span-7">
+      <!-- Results Section (Initially hidden until booking is complete) -->
+      <section id="results-section" class="lg:col-span-7 hidden">
         <!-- Example Result Card (Bento Style) -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <!-- Patient & Time Card -->
@@ -230,22 +246,23 @@
               <div>
                 <span
                   class="bg-secondary-container text-on-secondary-container text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Confirmed</span>
-                <h2 class="text-3xl font-headline font-bold text-primary mt-4">Benjamin A. Richardson</h2>
+                <h2 id="res-doc" class="text-3xl font-headline font-bold text-primary mt-4">Benjamin A. Richardson</h2>
               </div>
-              <div class="text-right">
+              <div class="text-right flex flex-col items-end">
                 <p class="text-sm font-label text-outline uppercase tracking-wider">Appointment ID</p>
-                <p class="font-mono font-bold text-on-surface">CS-992341</p>
+                <p id="res-id" class="font-mono font-bold text-on-surface mb-2">CS-992341</p>
+                <button onclick="cancelBooking()" class="text-xs font-bold text-error bg-error-container hover:bg-red-200 px-3 py-1 rounded-full cursor-pointer transition-colors mt-auto">Cancel Booking</button>
               </div>
             </div>
             <div class="grid grid-cols-2 gap-8 border-t border-surface-container-high pt-8">
               <div>
                 <p class="text-sm font-label text-outline uppercase tracking-wider mb-1">Time</p>
-                <p class="text-2xl font-bold text-primary">10:45 AM</p>
-                <p class="text-sm text-on-surface-variant">Today, Oct 24, 2024</p>
+                <p id="res-time" class="text-2xl font-bold text-primary">10:45 AM</p>
+                <p id="res-date" class="text-sm text-on-surface-variant">Today, Oct 24, 2024</p>
               </div>
               <div>
                 <p class="text-sm font-label text-outline uppercase tracking-wider mb-1">Arrival</p>
-                <p class="text-2xl font-bold text-primary">10:30 AM</p>
+                <p id="res-arrival" class="text-2xl font-bold text-primary">10:30 AM</p>
                 <p class="text-sm text-on-surface-variant">Please arrive 15m early</p>
               </div>
             </div>
@@ -253,8 +270,8 @@
           <!-- Department Card -->
           <div class="bg-surface-container-low rounded-xl p-6 flex flex-col justify-between min-h-[200px]">
             <div>
-              <span class="material-symbols-outlined text-primary text-3xl mb-4">cardiology</span>
-              <h3 class="text-xl font-headline font-bold text-primary">Cardiology Unit</h3>
+              <span class="material-symbols-outlined text-primary text-3xl mb-4">local_hospital</span>
+              <h3 id="res-dept" class="text-xl font-headline font-bold text-primary">Cardiology Unit</h3>
               <p class="text-on-surface-variant text-sm mt-2">Level 3, West Wing</p>
               <p class="text-on-surface-variant text-sm">Room 304C</p>
             </div>
@@ -264,18 +281,21 @@
               <span class="material-symbols-outlined text-sm">open_in_new</span>
             </div>
           </div>
-          <!-- Map Integration Card -->
+          <!-- Map Integration / Arrival Card -->
           <div onclick="window.location.href='../hospital/code.html'"
-            class="relative rounded-xl overflow-hidden min-h-[200px] group cursor-pointer">
+            class="relative rounded-xl overflow-hidden min-h-[200px] group cursor-pointer border-2 border-secondary hover:border-secondary-container transition-colors">
             <img
               class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-              data-alt="stylized 3D architectural map of a hospital interior showing blue navigation path towards a highlighted room"
+              data-alt="stylized 3D architectural map of a hospital interior"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbVP2t7f88Usb9Kv1IJdbyQNz6_Ot_R6BIZuP9B2KNj-8DHIQECqov1bNWJ4Bh_OX17ozZWFr3EB4M4cBkEVSdFAhHniZXqyWW6v6J2x_kKvDJGIS77E1Z2104nyUcFPHECe9U2ySrshmEOsPCKrYKvSdGsp9OdlOuv0KG2ozZSdc5KhXhpNEFV7hqNqAh8Q4R-QwKcRiJy6SOIWHv1DeuE_YmC5sT0pIJf7Nk_lZIldac7rUht6J_2AYMUXPjvD_Iqn0ih3O4rBy6" />
-            <div class="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent flex flex-col justify-end p-6">
-              <p class="text-white font-bold text-lg">Interactive Wayfinding</p>
-              <div class="flex items-center gap-2 text-primary-fixed font-semibold text-sm">
-                Open navigation map
-                <span class="material-symbols-outlined text-sm">map</span>
+            <div class="absolute inset-0 bg-gradient-to-t from-secondary/90 to-transparent flex flex-col justify-end p-6">
+              <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center mb-3 shadow-md">
+                <span class="material-symbols-outlined text-secondary font-bold">directions_walk</span>
+              </div>
+              <p class="text-white font-bold text-xl leading-tight mb-1">Arrived at the Hospital?</p>
+              <div class="flex items-center gap-2 text-secondary-fixed font-semibold text-sm">
+                Start Route to Department
+                <span class="material-symbols-outlined text-sm">arrow_forward</span>
               </div>
             </div>
           </div>
@@ -434,7 +454,87 @@
       accountDropdown.addEventListener('click', (e) => {
         e.stopPropagation();
       });
+
+      // Check for saved appointment on load
+      const savedApptRaw = localStorage.getItem('hospital_appointment');
+      if(savedApptRaw) {
+        const savedAppt = JSON.parse(savedApptRaw);
+        document.getElementById('res-dept').textContent = savedAppt.dept;
+        document.getElementById('res-doc').textContent = savedAppt.doc;
+        document.getElementById('res-date').textContent = savedAppt.dateFormat;
+        document.getElementById('res-time').textContent = savedAppt.timeFormat;
+        document.getElementById('res-arrival').textContent = savedAppt.arrivalFormat;
+        document.getElementById('res-id').textContent = savedAppt.id;
+
+        const resultsSection = document.getElementById('results-section');
+        resultsSection.classList.remove('hidden');
+        resultsSection.classList.add('animate-fade-in');
+        
+        // Disable form to indicate active booking
+        document.getElementById('booking-form').style.opacity = '0.5';
+        document.getElementById('booking-form').style.pointerEvents = 'none';
+
+        const headerText = document.querySelector('#booking-form-section header p');
+        headerText.innerHTML = `<span class="text-secondary font-bold">You have an active booking.</span> Check details below or cancel it to make a new one.`;
+      }
     });
+
+    function cancelBooking() {
+        localStorage.removeItem('hospital_appointment');
+        window.location.reload();
+    }
+
+    function submitBooking() {
+      // Get values
+      const dept = document.getElementById('select-dept').value;
+      const doc = document.getElementById('select-doc').value;
+      let dateVal = document.getElementById('select-date').value;
+      let timeVal = document.getElementById('select-time').value;
+      
+      if(!dept || !doc || !dateVal || !timeVal) return;
+
+      // Format date
+      const dateObj = new Date(dateVal);
+      // Account for timezone offset to show correct day
+      const userTimezoneOffset = dateObj.getTimezoneOffset() * 60000;
+      const localDate = new Date(dateObj.getTime() + userTimezoneOffset);
+      const dateFormat = localDate.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' });
+      
+      // Format time
+      const timeObj = new Date(`1970-01-01T${timeVal}`);
+      const timeFormat = timeObj.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+      
+      // Calculate arrival time (15 mins early)
+      const arrivalObj = new Date(timeObj.getTime() - 15*60000);
+      const arrivalFormat = arrivalObj.toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+
+      // Save to localStorage
+      const id = 'CS-' + Math.floor(100000 + Math.random() * 900000);
+      const appointmentObj = { dept, doc, dateFormat, timeFormat, arrivalFormat, id };
+      localStorage.setItem('hospital_appointment', JSON.stringify(appointmentObj));
+
+      // Update Result Nodes
+      document.getElementById('res-dept').textContent = dept;
+      document.getElementById('res-doc').textContent = doc;
+      document.getElementById('res-date').textContent = dateFormat;
+      document.getElementById('res-time').textContent = timeFormat;
+      document.getElementById('res-arrival').textContent = arrivalFormat;
+      document.getElementById('res-id').textContent = id;
+
+      // Disable form
+      document.getElementById('booking-form').style.opacity = '0.5';
+      document.getElementById('booking-form').style.pointerEvents = 'none';
+      const headerText = document.querySelector('#booking-form-section header p');
+      headerText.innerHTML = `<span class="text-secondary font-bold">You have an active booking.</span> Check details below or cancel it to make a new one.`;
+
+      // Show Results, scroll to them
+      const resultsSection = document.getElementById('results-section');
+      resultsSection.classList.remove('hidden');
+      resultsSection.classList.add('animate-fade-in');
+      
+      // Automatically scroll to results
+      resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   </script>
 </body>
 

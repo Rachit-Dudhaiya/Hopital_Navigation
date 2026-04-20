@@ -116,7 +116,7 @@
                     <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
                         href="../index.html">Home</a>
                     <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
-                        href="../booking/code.html">Booking Search</a>
+                        href="../booking/code.html">Book Appointment</a>
                     <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
                         href="../hospital/code.html">Map & Directory</a>
                     <a class="text-blue-700 dark:text-blue-300 border-b-2 border-blue-700 font-semibold pb-1 cursor-pointer active:opacity-80 transition-all"
@@ -196,6 +196,20 @@
             </div>
             <span class="material-symbols-outlined cursor-pointer">close</span>
         </div> -->
+
+        <!-- Persistent Appointment Banner -->
+        <div id="appointment-banner" class="hidden mb-6 bg-secondary-container text-on-secondary-container px-6 py-4 rounded-xl items-center justify-between shadow-sm border border-secondary/20 transition-all">
+            <div class="flex items-center gap-4">
+                <div class="w-10 h-10 bg-white flex-shrink-0 rounded-full flex items-center justify-center shadow-sm">
+                    <span class="material-symbols-outlined text-secondary">event_available</span>
+                </div>
+                <div>
+                    <h4 class="font-bold whitespace-nowrap overflow-hidden text-ellipsis md:overflow-visible md:whitespace-normal">Upcoming Appointment: <span id="banner-doc"></span></h4>
+                    <p class="text-sm lg:text-base opacity-90"><span id="banner-date"></span> at <span id="banner-time"></span> &bull; <strong id="banner-dept"></strong></p>
+                </div>
+            </div>
+            <button onclick="window.location.href='../hospital/code.html'" class="hidden md:block text-sm font-bold bg-white text-secondary px-6 py-2 rounded-lg shadow-sm hover:shadow-md transition-all whitespace-nowrap ml-4">Locate Room</button>
+        </div>
         <!-- Breadcrumbs -->
         <nav class="mb-6 flex items-center gap-2 text-on-surface-variant text-sm font-medium">
             <span class="cursor-pointer hover:text-primary">Directory</span>
@@ -513,6 +527,20 @@
             accountDropdown.addEventListener('click', (e) => {
                 e.stopPropagation();
             });
+
+            // Check for saved appointment
+            const savedApptRaw = localStorage.getItem('hospital_appointment');
+            if(savedApptRaw) {
+                const savedAppt = JSON.parse(savedApptRaw);
+                document.getElementById('banner-doc').textContent = savedAppt.doc;
+                document.getElementById('banner-date').textContent = savedAppt.dateFormat;
+                document.getElementById('banner-time').textContent = savedAppt.timeFormat;
+                document.getElementById('banner-dept').textContent = savedAppt.dept;
+                
+                const banner = document.getElementById('appointment-banner');
+                banner.classList.remove('hidden');
+                banner.classList.add('flex');
+            }
         });
     </script>
 </body>
