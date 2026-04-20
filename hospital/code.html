@@ -111,7 +111,7 @@
           <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
             href="../index.html">Home</a>
           <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
-            href="../booking/code.html">Book Appointment  </a>
+            href="../booking/code.html">Book Appointment</a>
           <a class="text-blue-700 dark:text-blue-300 border-b-2 border-blue-700 font-semibold pb-1 cursor-pointer active:opacity-80 transition-all"
             href="#">Map & Directory</a>
           <a class="text-slate-600 dark:text-slate-400 hover:text-blue-600 cursor-pointer active:opacity-80 transition-all"
@@ -184,13 +184,13 @@
     </span>
   </div> -->
   <!-- Main Content: Map & Directory Layout -->
-  <main class="flex-grow flex flex-col md:flex-row h-[calc(100vh-112px)] overflow-hidden mt-12">
+  <main class="flex-grow flex flex-col-reverse md:flex-row h-[calc(100vh-112px)] overflow-hidden mt-12">
     <!-- Sidebar Directory: Asymmetric Panel -->
-    <aside class="w-full md:w-[400px] bg-surface-container-low flex flex-col z-30 shadow-xl md:shadow-none">
+    <aside class="w-full md:w-[400px] h-1/2 md:h-auto bg-surface-container-low flex flex-col z-30 shadow-xl md:shadow-none border-t md:border-t-0 border-surface-tint/10">
       <div class="p-6 space-y-6">
-        <div class="space-y-2">
-          <h1 class="font-headline text-3xl font-extrabold text-primary tracking-tight">Campus Directory</h1>
-          <p class="text-on-surface-variant text-sm">Locate departments, facilities, and clinical suites.</p>
+        <div class="space-y-1 md:space-y-2">
+          <h1 class="font-headline text-2xl md:text-3xl font-extrabold text-primary tracking-tight">Campus Directory</h1>
+          <p class="text-on-surface-variant text-xs md:text-sm">Locate departments, facilities, and suites.</p>
         </div>
         <!-- Search Interface -->
         <div class="relative group">
@@ -203,14 +203,12 @@
         </div>
         <!-- Filter Chips -->
         <div class="flex gap-2 overflow-x-auto pb-2 scrollbar-hide">
-          <button
-            class="px-4 py-1.5 bg-primary text-on-primary rounded-full text-xs font-semibold whitespace-nowrap">All</button>
-          <button
-            class="px-4 py-1.5 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-semibold whitespace-nowrap hover:bg-surface-container-high transition-colors">Wings</button>
-          <button
-            class="px-4 py-1.5 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-semibold whitespace-nowrap hover:bg-surface-container-high transition-colors">Amenities</button>
-          <button
-            class="px-4 py-1.5 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-semibold whitespace-nowrap hover:bg-surface-container-high transition-colors">Parking</button>
+          <button data-floor="5" class="sidebar-floor-btn px-4 py-1.5 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-semibold whitespace-nowrap hover:bg-surface-container-high transition-colors">Floor 5</button>
+          <button data-floor="4" class="sidebar-floor-btn px-4 py-1.5 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-semibold whitespace-nowrap hover:bg-surface-container-high transition-colors">Floor 4</button>
+          <button data-floor="3" class="sidebar-floor-btn px-4 py-1.5 bg-primary text-on-primary rounded-full text-xs font-semibold whitespace-nowrap">Floor 3</button>
+          <button data-floor="2" class="sidebar-floor-btn px-4 py-1.5 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-semibold whitespace-nowrap hover:bg-surface-container-high transition-colors">Floor 2</button>
+          <button data-floor="1" class="sidebar-floor-btn px-4 py-1.5 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-semibold whitespace-nowrap hover:bg-surface-container-high transition-colors">Floor 1</button>
+          <button data-floor="B" class="sidebar-floor-btn px-4 py-1.5 bg-surface-container-highest text-on-surface-variant rounded-full text-xs font-semibold whitespace-nowrap hover:bg-surface-container-high transition-colors">Basement</button>
         </div>
       </div>
       <!-- Scrollable List -->
@@ -358,17 +356,17 @@
       <div class="absolute top-6 right-6 z-20 flex flex-col gap-2">
         <div class="map-glass p-2 rounded-2xl shadow-lg flex flex-col items-center">
           <span class="text-[10px] font-bold text-outline mb-2">FLOOR</span>
-          <button data-floor="5" class="floor-btn w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-sm font-bold transition-all">5</button>
-          <button data-floor="4" class="floor-btn w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-sm font-bold transition-all">4</button>
-          <button data-floor="3" class="floor-btn w-10 h-10 flex items-center justify-center rounded-lg bg-primary text-on-primary shadow-md text-sm font-bold transition-all">3</button>
-          <button data-floor="2" class="floor-btn w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-sm font-bold transition-all">2</button>
-          <button data-floor="1" class="floor-btn w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-sm font-bold transition-all">1</button>
-          <button data-floor="B" class="floor-btn w-10 h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-sm font-bold text-primary transition-all">B</button>
+          <button data-floor="5" class="floor-btn w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-xs md:text-sm font-bold transition-all">5</button>
+          <button data-floor="4" class="floor-btn w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-xs md:text-sm font-bold transition-all">4</button>
+          <button data-floor="3" class="floor-btn w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-lg bg-primary text-on-primary shadow-md text-xs md:text-sm font-bold transition-all">3</button>
+          <button data-floor="2" class="floor-btn w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-xs md:text-sm font-bold transition-all">2</button>
+          <button data-floor="1" class="floor-btn w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-xs md:text-sm font-bold transition-all">1</button>
+          <button data-floor="B" class="floor-btn w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-lg hover:bg-surface-container text-xs md:text-sm font-bold text-primary transition-all">B</button>
         </div>
       </div>
 
       <!-- Map Legend (Bottom Right) -->
-      <div class="absolute bottom-6 right-6 z-20 map-glass p-4 rounded-2xl shadow-lg max-w-xs">
+      <div class="absolute bottom-6 right-6 z-20 map-glass p-4 rounded-2xl shadow-lg max-w-xs hidden md:block">
         <h5 class="text-xs font-bold text-primary mb-3">CAMPUS LEGEND</h5>
         <div class="grid grid-cols-2 gap-3 text-[11px] font-medium text-on-surface-variant">
           <div class="flex items-center gap-2">
@@ -563,6 +561,18 @@
           btn.classList.add('bg-primary', 'text-on-primary', 'shadow-md');
           btn.classList.remove('hover:bg-surface-container', 'text-primary');
           
+          if (typeof sidebarFloorBtns !== 'undefined') {
+              sidebarFloorBtns.forEach(sb => {
+                 if (sb.dataset.floor === btn.dataset.floor) {
+                     sb.classList.remove('bg-surface-container-highest', 'text-on-surface-variant');
+                     sb.classList.add('bg-primary', 'text-on-primary');
+                 } else {
+                     sb.classList.add('bg-surface-container-highest', 'text-on-surface-variant');
+                     sb.classList.remove('bg-primary', 'text-on-primary');
+                 }
+              });
+          }
+          
           currentFloor = btn.dataset.floor;
           tooltipFloorLabel.textContent = currentFloor;
           activePinFloorLabel.textContent = 'FLOOR ' + currentFloor;
@@ -593,6 +603,15 @@
 
       const directoryHeaders = document.querySelectorAll('.directory-header');
       const searchInput = document.getElementById('directory-search');
+      
+      const sidebarFloorBtns = document.querySelectorAll('.sidebar-floor-btn');
+      sidebarFloorBtns.forEach(sb => {
+          sb.addEventListener('click', () => {
+              const f = sb.dataset.floor;
+              const targetBtn = Array.from(floorBtns).find(b => b.dataset.floor === f);
+              if (targetBtn) targetBtn.click();
+          });
+      });
 
       // Function to show only items on current floor
       function filterDirectory(floor) {
